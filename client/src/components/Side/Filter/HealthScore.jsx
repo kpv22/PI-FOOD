@@ -13,8 +13,8 @@ export const HealthScore = () => {
   };
 
   return (
-    <div>
-      <select className={Style.select} onChange={(e) => filter(e)}>
+    <div className={Style.select}>
+      <select onChange={(e) => filter(e)}>
         <option value="max">Mayor a menor</option>
         <option value="desc">Menor a mayor</option>
       </select>

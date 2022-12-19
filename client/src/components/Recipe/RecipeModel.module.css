@@ -145,18 +145,21 @@ body {
 
 .card {
   width: 230px;
-  height: 290px;
+  height: 350px;
   border-radius: 20px;
   overflow: hidden;
-  padding: 8px;
+  padding: 6px;
   position: relative;
+  margin-top: 5px;
+  /* margin-left: 3%;
+  margin-right: 3%; */
 }
 
 .image {
   width: 100%;
-  height: 100%;
+  height: 70%;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 6px 6px 0px 0px;
 }
 
 .cardbody {
@@ -167,13 +170,15 @@ body {
   position: absolute;
   background: #1f3d4738;
   backdrop-filter: blur(5px);
-  border-radius: 15px;
   color: #fff;
-  padding: 30px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: 2s;
+  align-items: center;
+  transition: 1s;
+  margin-top: -53px;
+  border-radius: 6px;
 }
 
 .card:hover .cardbody {
@@ -181,63 +186,54 @@ body {
 }
 
 .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1f3d4738;
+  backdrop-filter: blur(5px);
   text-transform: uppercase;
-  font-size: 19px;
-  /* font-weight: 200; */
+  font-size: 14px;
+  color: #fff;
+  margin-top: -5px;
+  border-radius: 0px 0px 6px 6px;
+  height: 55px;
+  width: 100%;
 }
 
 .cardsubtitle {
   text-transform: capitalize;
   font-size: 14px;
   font-weight: 300;
+  margin-top: 60px;
 }
 
 .cardinfo {
   font-size: 16px;
   line-height: 25px;
-  margin: 0;
+
   font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .cardbtn {
-  /* color: #1f3d47; */
   background: #8fabba;
   padding: 10px 20px;
   width: 120px;
   border-radius: 5px;
   text-transform: capitalize;
-  /* border: 2px solid #fff; */
+
   outline: none;
   font-weight: 500;
   cursor: pointer;
   backdrop-filter: blur(1px);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
   height: 35px;
   color: #fff;
   border: none;
   background: none;
 }
-
-/* .btn2 {
-  position: absolute;
-  top: 50px;
-  right: 260px;
-  z-index: 8;
-  border: 2px solid #fff;
-  color: #fff;
-  display: inline-flex;
-  align-items: center;
-  align-content: center;
-  background: none;
-  font-weight: 900;
-  font-size: 1.1em;
-  box-sizing: border-box;
-  height: 40px;
-  padding: 1rem;
-  backdrop-filter: blur(1px);
-  transition: all 0.2s ease-in-out;
-  margin-bottom: 0px;
-} */
 
 .cardbtn:hover {
   cursor: pointer;
@@ -245,3 +241,110 @@ body {
   border-bottom: 2px solid white;
   padding-top: 5px;
 }
+
+/* *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  line-height: 1.6;
+  background: #13181c;
+}
+
+.image {
+  background-size: cover;
+  box-shadow: 0 1em 2em rgb(0 0 0 / 0.2);
+}
+
+.card {
+  max-width: 35ch;
+ padding: clamp(1.5rem, 20vh, 10rem) 0 0; 
+  color: white;
+  box-shadow: 0 1em 2em rgb(0 0 0 / 0.2);
+  transition: transform ease 250ms;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 1.5rem;
+  background: linear-gradient(
+    rgb(0 0 0 / 0),
+    rgb(0 0 0 / 0.25) 15%,
+    rgb(0 0 0 / 1)
+  );
+}
+
+.cardbody p {
+  color: hsl(0deg 50% 100% / 0.8);
+  margin-bottom: 1.25em;
+}
+
+@media (hover: hover), (prefers-reduced-motion: no-preference) {
+  .cardbody {
+    transform: translateY(60%);
+    transition: transform 500ms ease;
+  }
+
+  .card:hover .cardbody {
+    transform: translateY(0);
+    transition-delay: 500ms;
+  }
+
+  .cardbody > *:not(.card-title) {
+    opacity: 0;
+    transition: opacity 1200ms linear 400ms;
+  }
+
+  .card:hover .cardbody > *:not(.card-title) {
+    opacity: 1;
+  }
+
+  .card-title::after {
+    content: "";
+    position: absolute;
+    left: -1.5rem;
+    top: 100%;
+    height: 3px;
+    width: calc(100% + 1.5rem);
+    background: hsl(142 90% 61%);
+    transform: scaleX(0);
+    transition: transform 200ms ease;
+    transform-origin: left;
+  }
+
+  .card:hover .card-title::after {
+    transition: transform 500ms ease;
+    transform: scaleX(1);
+  }
+}
+
+.button {
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  background: hsl(142 90% 61%);
+  padding: 0.5em 1.25em;
+  border-radius: 0.25rem;
+}
+
+.button:hover {
+  background: white;
+}
+.card-title {
+  position: relative;
+  width: max-content;
+} */

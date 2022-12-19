@@ -22,8 +22,8 @@ export const DesAsc = (props) => {
   };
 
   return (
-    <div>
-      <select className={Style.select} onChange={(e) => HandleSort(e)}>
+    <div className={Style.select}>
+      <select onChange={(e) => HandleSort(e)}>
         <option className={Style.option} value="A-Z">
           A-Z
         </option>

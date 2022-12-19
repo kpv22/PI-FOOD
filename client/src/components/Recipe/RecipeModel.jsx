@@ -39,8 +39,8 @@ export const RecipeModel = (props) => {
   return props.name ? (
     <div className={Style.card}>
       <img className={Style.image} src={props.image} alt="imagen" />
+      <h2 className={Style.title}>{props.name}</h2>
       <div key={props.id} className={Style.cardbody}>
-        <h2 className={Style.title}>{props.name}</h2>
         <p className={Style.cardsubtitle}>{props.healthScore}</p>
         <ul className={Style.cardinfo}>
           {props.diets?.map((element, index) => (

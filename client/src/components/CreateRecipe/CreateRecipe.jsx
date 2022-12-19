@@ -10,7 +10,7 @@ import { Footer } from "../Footer/Footer.jsx";
 
 export const CreateRecipe = (props) => {
   const dispatch = useDispatch();
-
+  const recipes = useSelector((state) => state.recipes);
   const dietas = useSelector((state) => state.dietas);
   const history = useHistory();
 
@@ -55,10 +55,13 @@ export const CreateRecipe = (props) => {
       });
 
       setErrorInput(
-        validate({
-          ...input,
-          diets: input.diets.filter((t) => t !== e.target.value),
-        })
+        validate(
+          {
+            ...input,
+            diets: input.diets.filter((t) => t !== e.target.value),
+          },
+          [...recipes]
+        )
       );
     }
   };

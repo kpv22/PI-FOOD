@@ -1,7 +1,7 @@
 .filterConteiner {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   font-size: 1.1rem;
   font-weight: bolder;
 }
@@ -10,7 +10,7 @@
   font-weight: 900;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 18px;
 }
 
@@ -88,7 +88,7 @@ select {
   -ms-appearance: none;
   appearance: none;
   outline: 0;
-  background-color: none;
+  background-color: transparent;
   background-image: none;
   border: none;
   flex: 1;
@@ -102,10 +102,10 @@ select {
   font-weight: 900;
   font-family: "Josefin Sans", sans-serif;
 }
-/* select::-ms-expand {
+select::-ms-expand {
   display: none;
   background: #6296a8;
-} */
+}
 
 .select {
   font-weight: 900;
@@ -129,3 +129,54 @@ select {
 .select::-ms-expand {
   background-color: aqua;
 }
+
+/* .box {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 5%;
+
+  }
+
+  .box select {
+    background: rgba(17, 226, 31, 0.971);
+    color: white;
+    padding: 12px;
+    width: 150px;
+    border: 2px;
+    border: 2px solid white;
+    border-radius: 10px;
+
+    font-size: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+  }
+
+  .box::before {
+    content: "\f13a";
+    font-family: FontAwesome;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 45px;
+    color: rgba(255, 255, 255, 0.5);
+
+    background-color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+  }
+
+  .box:hover::before {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .box select option {
+    padding: 30px;
+  } */

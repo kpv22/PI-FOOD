@@ -2,6 +2,8 @@
 //   var nombre = /^[a-zA-Z ]{1,30}$/;
 //   var steps = /^[a-zA-Z0-9 ]{1,500}$/;
 
+import { filterByDiets } from "../../redux/actions";
+
 //   var num10a100 = /^([1][0-9]|100)$/;
 //   var regex = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
 
@@ -43,8 +45,12 @@
 // };
 // export default validate;
 
-const validate = (input) => {
+const validate = (input, recipes) => {
   // Crea un objeto con los patrones de expresión regular y los mensajes de error correspondientes
+
+  //filtrados = filter((ele)=>(input.name === ele.name))
+  // const filtrado = recipes.filter((ele) => recipes.name === input.name)
+
   const patterns = {
     name: {
       pattern: /^[a-zA-Z ]{1,30}$/,

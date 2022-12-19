@@ -24,6 +24,7 @@
   border-bottom: 3.5px solid #fff;
   outline: 0;
   font-size: 1.3rem;
+  color: white;
 }
 
 .input::placeholder {
@@ -34,4 +35,12 @@
   display: flex;
   flex-direction: row;
   gap: 25px;
+  color: #fff;
+}
+
+.search:focus {
+  outline: none;
+  border: 1px solid #000000;
+
+  color: #fff;
 }
