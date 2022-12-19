@@ -1,0 +1,75 @@
+.containe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-image: url("../../assets/pexels-nataliya-vaitkevich-6275164.jpg"); */
+  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.06)),
+    url("../../assets/sartin_difuminadodepizza\ \(1\).jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+  overflow: hidden;
+  color: #eee;
+}
+
+.container:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    rgb(198, 196, 196) 10%,
+    rgba(96, 96, 96, 0.12) 30%
+  );
+}
+.container:before {
+  content: "";
+  width: 100%;
+  height: 300%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  scale: (1, 1);
+  transform: translateZ(0);
+  background: #1b2030 url(../../assets/sarten_difuminado.jpg) no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  animation: grow 360s linear 10ms infinite;
+  transition: all 0.3s ease-in-out;
+  z-index: -2;
+  /* background: linear-gradient(
+    to top,
+    rgb(198, 196, 196) 10%,
+    rgba(96, 96, 96, 0.12) 30%
+  ); */
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1) translateY(0px);
+  }
+  30% {
+    transform: scale(1.2) translateY(-100px);
+  }
+}
+
+.envolver {
+  display: flex;
+  flex-direction: row;
+}

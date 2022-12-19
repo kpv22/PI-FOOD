@@ -1,0 +1,67 @@
+.footer {
+  display: flex;
+  border: solid 1px white;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  backdrop-filter: blur(100px);
+
+  height: 100px;
+  width: 100%;
+  padding: 0px 1rem;
+  color: white;
+  text-align: left;
+  background: linear-gradient(
+    to top,
+    right rgb(198, 196, 196) 0%,
+    rgba(255, 251, 251, 0.12) 20%
+  );
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.footer h5 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.infoLeft,
+.infoRight {
+  padding: 1rem;
+  line-height: 1em;
+}
+
+.infoRight {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.3rem;
+  justify-content: flex-start;
+  padding-top: 2rem;
+}
+
+.infoRight > a {
+  text-decoration: none;
+  color: rgb(245, 245, 245);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1rem;
+  border-radius: 3rem;
+  background-color: rgb(69, 69, 69);
+  padding-left: 1.2rem;
+}
+
+.infoRight > a:hover {
+  scale: 1.02;
+}
+
+.infoRight > a:active {
+  scale: 0.98;
+}
+
+.infoRight img {
+  height: 2rem;
+}

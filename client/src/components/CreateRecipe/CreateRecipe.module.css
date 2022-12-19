@@ -1,0 +1,234 @@
+.createConteiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+  overflow: hidden;
+  color: #eee;
+  /* position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 30rem;
+  width: 100%;
+  gap: 0.5rem;
+  background-image: url(../../assets/cuchilloTabla.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+  padding-top: 0.3rem;
+  margin-bottom: 0px; */
+}
+
+.createConteiner:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  /* background: linear-gradient(
+    to top,
+    rgb(198, 196, 196) 10%,
+    rgba(96, 96, 96, 0.12) 30%
+  ); */
+}
+.createConteiner:before {
+  content: "";
+  width: 100%;
+  height: 300%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  scale: (1, 1);
+  transform: translateZ(0);
+  background: #1b2030 url(../../assets/cuchilloTabla.jpg) no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  animation: grow 360s linear 10ms infinite;
+  transition: all 0.3s ease-in-out;
+  z-index: -2;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1) translateY(0px);
+  }
+  30% {
+    transform: scale(1.2) translateY(-100px);
+  }
+}
+
+.form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: #fff 2px solid;
+  backdrop-filter: blur(8px);
+  width: 1000px;
+  height: 700px;
+  gap: 1rem;
+  color: white;
+  padding: 30px;
+  border-radius: 8px;
+  margin: 1rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+}
+
+.info > input {
+  resize: none;
+  text-indent: 10px;
+
+  width: 400px;
+  height: 25px;
+  border-radius: 3px;
+  border: none;
+  margin-bottom: 12px;
+}
+
+.info > textarea {
+  text-indent: 10px;
+  resize: none;
+  width: 400px;
+  height: 120px;
+  border-radius: 3px;
+  border: none;
+  margin-bottom: 12px;
+}
+
+.info > span {
+  width: 400px;
+  height: 30px;
+  color: rgb(208, 72, 72);
+  padding-bottom: 1px;
+}
+
+.diets > span {
+  width: 400px;
+  height: 30px;
+  color: rgb(208, 72, 72);
+  padding-bottom: 1px;
+}
+
+.diets {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.47em;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  height: 400px;
+  width: 400px;
+  padding: 12px;
+  top: -22px;
+  right: 13px;
+}
+
+.map {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 40%;
+  /* flex-wrap: wrap; */
+}
+
+.btn {
+  border: 2px solid #fff;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+  background: none;
+  font-weight: 900;
+  font-size: 1.1em;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 1rem;
+  backdrop-filter: blur(1px);
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 0px;
+}
+
+.btn2 {
+  position: absolute;
+  top: 50px;
+  right: 260px;
+  z-index: 8;
+  border: 2px solid #fff;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+  background: none;
+  font-weight: 900;
+  font-size: 1.1em;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 1rem;
+  backdrop-filter: blur(1px);
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 0px;
+}
+
+.btnDisable {
+  color: #fff;
+  background: rgb(200, 196, 196 10);
+  font-weight: 900;
+  font-size: 1.1em;
+  box-sizing: border-box;
+  height: 40px;
+  width: auto;
+  margin-right: 20px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  border-bottom: 2px solid white;
+  padding-top: 5px;
+}
+
+.btn2:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  border-bottom: 2px solid white;
+  padding-top: 5px;
+}
+
+.textDe {
+  text-decoration: none;
+}
+
+.hs {
+  width: 20px;
+}
+
+.info > input[type="number"] {
+  margin-top: 2px;
+  width: 60px;
+}
+
+.checks {
+  margin-top: 4px;
+  width: 40px;
+}

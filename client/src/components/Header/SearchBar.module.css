@@ -1,0 +1,37 @@
+.btn {
+  border: 2px solid #fff;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+  background: none;
+  font-weight: 900;
+  font-size: 1.1em;
+  line-height: 1;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 1rem;
+}
+.btn:hover {
+  cursor: pointer;
+}
+
+.input {
+  background: transparent;
+  width: 100%;
+  border: 0;
+  border-bottom: 3.5px solid #fff;
+  outline: 0;
+  font-size: 1.3rem;
+}
+
+.input::placeholder {
+  color: white;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
