@@ -2,9 +2,9 @@ import React from "react";
 import { RecipeModel } from "./RecipeModel";
 import { useSelector, useDispatch } from "react-redux";
 import * as actions from "../../redux/actions";
-import { Pagination } from "../Pagination/Pagination.jsx";
+import Pagination from "../Pagination/Pagination.jsx";
 import { useState } from "react";
-import { Loading } from "../Empty/Loading";
+
 import { Empty } from "../Empty/Empty";
 import Style from "./Recipe.module.css";
 
@@ -20,15 +20,22 @@ export const Recipe = (props) => {
 
   const currentPage = useSelector((state) => state.currentPage);
 
-  const [charactersPerPage, setCharactersPerPage] = useState(9); //cuantas recetas x pagina
-  const indexOfLastCharacter = currentPage * charactersPerPage; //pagina x cantidad  recetas en pagina
+  // const [charactersPerPage, setCharactersPerPage] = useState(9); //cuantas recetas x pagina
+  // const indexOfLastCharacter = currentPage * charactersPerPage; //pagina x cantidad  recetas en pagina
   // const firstPostIndex = currentPage - charactersPerPage; //indice del ultimo pj
-  const indexOfFirsChararacter = indexOfLastCharacter - charactersPerPage;
+  // const indexOfFirsChararacter = indexOfLastCharacter - charactersPerPage;
 
-  const currentCharacters = recipes.slice(
-    indexOfFirsChararacter,
-    indexOfLastCharacter
-  );
+  // const currentCharacters = recipes.slice(
+
+  //   indexOfFirsChararacter,
+  //   indexOfLastCharacter
+  // );
+
+  const recipesPage = 9;
+  const lastIndex = currentPage * recipesPage;
+  const firstIndex = lastIndex - recipesPage;
+  const showRecipes = recipes.slice(firstIndex, lastIndex);
+  const totalPages = Math.ceil(recipes?.length / recipesPage);
 
   //agarra el indice del primero y del ultimo pj
 
@@ -42,13 +49,12 @@ export const Recipe = (props) => {
   } else {
     return (
       <div>
-        <Pagination
-          charactersPerPage={charactersPerPage}
-          recipes={recipes.length}
-        />
+        {totalPages >= 2 && Array.isArray(showRecipes) && (
+          <Pagination totalPages={totalPages} />
+        )}
 
         <section className={Style.containerCards}>
-          {currentCharacters?.map((ele) => (
+          {showRecipes?.map((ele) => (
             <RecipeModel
               name={ele.name}
               image={ele.image}

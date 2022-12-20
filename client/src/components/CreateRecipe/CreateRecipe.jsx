@@ -73,6 +73,12 @@ export const CreateRecipe = (props) => {
   };
 
   const handleSubmit = (event) => {
+    event.preventDefault();
+    if (recipes.find((ele) => ele.name === input.name)) {
+      alert("Esta receta ya existe");
+      return;
+    }
+
     dispatch(actions.postRecipes(input));
     setInput({
       ...input,
@@ -94,7 +100,7 @@ export const CreateRecipe = (props) => {
           <button className={style.btn2}>Back to home</button>
         </Link>
 
-        <form className={style.form} onSubmit={() => handleSubmit()}>
+        <form className={style.form} onSubmit={(e) => handleSubmit(e)}>
           <div className={style.info}>
             <label>Name:</label>
 

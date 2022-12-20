@@ -9,6 +9,8 @@ import {
   HEALTH_SCORE,
   RECIPE_ID,
   CLEARID,
+  SET_PAGES,
+  FILTER_RECIPE,
   // CHANGE_STATE,
 } from "./reducer";
 
@@ -85,3 +87,23 @@ export const postRecipes = (payload) => {
     return postRecipe;
   };
 };
+export const setPage = (payload) => {
+  return {
+    type: SET_PAGES,
+    payload,
+  };
+};
+
+export const filterRecipe = (payload) => {
+  return {
+    type: FILTER_RECIPE,
+    payload,
+  };
+};
+
+// export const filterPoke = (payload) => {
+//   return {
+//     type: FILTER_POKE,
+//     payload,
+//   };
+// };

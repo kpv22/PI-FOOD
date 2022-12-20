@@ -89,6 +89,7 @@ const searchDb = async () => {
         image: element.image,
         steps: element.steps,
         diets: element.diets?.map((diet) => diet.name),
+        createdInDb: element.createdInDb,
       };
     });
     return obj;

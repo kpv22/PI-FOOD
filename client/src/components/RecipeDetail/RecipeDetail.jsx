@@ -20,31 +20,53 @@ export const RecipeDetail = () => {
   console.log(recipeId);
 
   return (
-    <div>
+    <div className={Style.container}>
       <Link to="/home">
-        <button onClick={() => dispatch(actions.ClearId())}>
+        <button
+          className={Style.button}
+          onClick={() => dispatch(actions.ClearId())}
+        >
           Regresar al home
         </button>
       </Link>
-      <h1>{recipeId.name}</h1>
+      <h1 className={Style.name}>{recipeId.name}</h1>
       <img className={Style.img} src={recipeId.image} alt={recipeId.name} />
-      <h4>Health Score</h4>
+      <h4 className={Style.healthScore}>Health Score</h4>
       <h3>{recipeId.healthScore}</h3>
       <br />
-      <h4>Diets</h4>
+      {/* veo si esta creado en la base de datos asi le puedo agregar
+      botones delete o edit */}
+      {console.log(id.length)}
+      {id.length > 6 ? (
+        <>
+          <button className="mi-boton">Haz clic aquí</button>
+          <h1>Este es el título</h1>
+        </>
+      ) : null}
+      {/* {(recipeId.id.length > 8)(console.log(recipeId.name))} */}
+      <h4 className={Style.diets}>Diets</h4>
       {recipeId.diets?.map((ele, index) => (
-        <h3 key={index}>{ele}</h3>
+        <h3 className={Style.diet} key={index}>
+          {ele}
+        </h3>
       ))}
-      <br />
-      <h4>Steps</h4>
 
+      {recipeId.steps ? <h4 className={Style.step}>Steps</h4> : <h4></h4>}
+      {/* <h4 className={Style.step}>Steps</h4> */}
       <div>
-        <p>{recipeId.steps}</p>
+        {recipeId.steps ? (
+          <p className={Style.steps}>{recipeId.steps}</p>
+        ) : (
+          <p></p>
+        )}
       </div>
-      <br></br>
+      {/*  */}
       <h4>Summary</h4>
       <p>
-        <p dangerouslySetInnerHTML={{ __html: recipeId?.summary }} />
+        <p
+          className={Style.summary}
+          dangerouslySetInnerHTML={{ __html: recipeId?.summary }}
+        />
       </p>
     </div>
   );

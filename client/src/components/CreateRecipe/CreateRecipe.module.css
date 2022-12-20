@@ -199,6 +199,11 @@
   height: 40px;
   width: auto;
   margin-right: 20px;
+  cursor: default;
+}
+.btnDisable:hover {
+  transform: none;
+  cursor: default;
 }
 
 .btn:hover {

@@ -25,4 +25,23 @@ video {
   object-fit: cover;
 }
 
+button {
+  appearance: none;
+  border: none;
+
+  color: #fff;
+
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i");

@@ -1,5 +1,48 @@
-/* .img {
-  height: 500px;
-  margin: 50px;
-  box-shadow: 5px 5px 20px black;
-} */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 800px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.name {
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.healthScore {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+  margin: 20px 0;
+}
+
+.diets {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+  margin: 20px 0;
+}
+
+.summary {
+  font-size: 1em;
+  color: #666;
+  line-height: 1.5;
+  text-align: justify;
+  margin: 20px 0;
+}

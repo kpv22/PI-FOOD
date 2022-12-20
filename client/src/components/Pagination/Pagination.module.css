@@ -1,4 +1,4 @@
-.btn {
+/* .btn {
   border: 0.1px solid #fff;
   border-radius: 3px;
   margin: 2px;
@@ -22,10 +22,49 @@
 .bar {
   background-color: rgb(198, 196, 196);
   height: 80px;
-}
+}*/
+
 .container {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1px;
+}
+
+.wrapper input {
+  width: 40px;
+  text-align: center;
+  margin-right: 5px;
+  height: 30px;
+}
+
+.wrapper p {
+  font-weight: 700;
+}
+
+.wrapper button {
+  height: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #00000076;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-transform: uppercase;
+  transition: color 0.6s;
+
+  color: #00000076;
+  cursor: pointer;
 }
