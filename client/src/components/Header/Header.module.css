@@ -38,14 +38,14 @@
   scale: (1, 1);
 
   transform: translateZ(0);
-  background: #1b2030 url(../../assets/pexels-nataliya-vaitkevich-6275164.jpg)
-    50% 0 no-repeat;
+  background: #1b2030 url(../../assets/header/Header.jpg) 50% 0 no-repeat;
 
   background-size: 100%;
   background-attachment: fixed;
   animation: grow 360s linear 10ms infinite;
   transition: all 0.4s ease-in-out;
   z-index: -2;
+  filter: blur(1px);
 }
 .nav {
   background-color: transparent;

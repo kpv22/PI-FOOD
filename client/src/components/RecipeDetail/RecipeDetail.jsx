@@ -48,35 +48,28 @@ export const RecipeDetail = () => {
           </>
 
           <br />
-          <div className={Style.diets}>
-            <h4>Diets</h4>
-            {recipeId.diets?.map((ele, index) => (
-              <h3 className={Style.diet} key={index}>
-                {ele}
-              </h3>
-            ))}
-          </div>
         </div>
         <div className={Style.summary}>
           <p>
             <h4>Summary</h4>
-            <p
+            <div
               className={Style.text}
               dangerouslySetInnerHTML={{ __html: recipeId?.summary }}
-            />
+            ></div>
           </p>
           <img className={Style.img} src={recipeId.image} alt={recipeId.name} />
         </div>
-
-        <div className={Style.step ? Style.steps : "hidden"}>
-          {recipeId.steps ? <h4>Steps</h4> : <h4></h4>}
-          <div>
-            {recipeId.steps ? (
-              <p className={Style.steps}>{recipeId.steps}</p>
-            ) : (
-              <p></p>
-            )}
-          </div>
+        <div className={Style.diets}>
+          <h4>Diets</h4>
+          {recipeId.diets?.map((ele, index) => (
+            <h3 className={Style.diet} key={index}>
+              {ele}
+            </h3>
+          ))}
+        </div>
+        <div className={recipeId.steps ? Style.steps : Style.hidden}>
+          {recipeId.steps && <h4>Steps</h4>}
+          <div>{recipeId.steps && <p>{recipeId.steps}</p>}</div>
         </div>
       </div>
       <Footer />

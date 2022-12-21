@@ -9,6 +9,7 @@ export const POST_RECIPE = "POST_RECIPE";
 export const RECIPE_ID = "RECIPE_ID";
 export const CLEARID = "CLEARID";
 export const SET_PAGES = "SET_PAGES";
+
 // export const FILTER_RECIPE = "FILTER_RECIPE";
 export const FILTER_CREATED = "FILTER_CREATED";
 
@@ -41,8 +42,8 @@ function rootReducer(state = initialState, action) {
         recipes: action.payload,
         currentPage: 1,
       };
-
     ////////////////////////////////////////////////////////////////////////////
+
     case GET_DIETS:
       return {
         ...state,

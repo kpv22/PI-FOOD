@@ -112,21 +112,8 @@ const getAll = async () => {
   }
 };
 
-// const getAllFilter = async (name) => {
-//   try {
-//     const searchRecipe = await getAll();
-//     const result = searchRecipe.filter(
-//       (ele) => ele.name.toLowerCase().includes(name.toLowerCase()) === true
-//     );
-//     return result;
-//   } catch (error) {
-//     return error;
-//   }
-// };
 const rece = async (name) => {
   try {
-    //const agregarlas =  await info.filter((ele) => ele.name === receta)
-    //const agregaradb = await Recipe.findOrCreate(agregarlas) ME CAGO EN HENRY ERA MAS FACIL
     if (name) {
       const buscareceta = await getAll();
       const resultado = await buscareceta.filter(
@@ -141,7 +128,7 @@ const rece = async (name) => {
 
     throw "No tenemos datos sobre esta receta";
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -156,7 +143,7 @@ const getByID = async (idReceta) => {
       throw "Ups, no tenemos una receta con ese id";
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
