@@ -20,17 +20,6 @@ export const Recipe = (props) => {
 
   const currentPage = useSelector((state) => state.currentPage);
 
-  // const [charactersPerPage, setCharactersPerPage] = useState(9); //cuantas recetas x pagina
-  // const indexOfLastCharacter = currentPage * charactersPerPage; //pagina x cantidad  recetas en pagina
-  // const firstPostIndex = currentPage - charactersPerPage; //indice del ultimo pj
-  // const indexOfFirsChararacter = indexOfLastCharacter - charactersPerPage;
-
-  // const currentCharacters = recipes.slice(
-
-  //   indexOfFirsChararacter,
-  //   indexOfLastCharacter
-  // );
-
   const recipesPage = 9;
   const lastIndex = currentPage * recipesPage;
   const firstIndex = lastIndex - recipesPage;

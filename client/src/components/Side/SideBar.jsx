@@ -8,22 +8,27 @@ import Style from "./SideBar.module.css";
 export const SideBar = (props) => {
   const dispatch = useDispatch();
 
+  function refreshPage() {
+    window.location.reload();
+  }
+
   const handleClick = (event) => {
     event.preventDefault();
     dispatch(actions.getRecipes());
+    refreshPage();
   };
 
   return (
     <>
       <div className={Style.divContainer}>
         <div className={Style.filters}>
-          {/* <h2>Sort by</h2> */}
-          <div className={Style.filterCon}>
-            {/* <DesAsc />
-            <HealthScore /> */}
-          </div>
+          <div className={Style.filterCon}></div>
 
           <h2>Filter by diet</h2>
+
+          <br />
+          <br />
+
           <div>
             <Dietas />
           </div>
