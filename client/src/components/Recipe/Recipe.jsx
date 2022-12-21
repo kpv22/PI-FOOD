@@ -48,7 +48,7 @@ export const Recipe = (props) => {
     );
   } else {
     return (
-      <div>
+      <div className={Style.recipeContainer}>
         {totalPages >= 2 && Array.isArray(showRecipes) && (
           <Pagination totalPages={totalPages} />
         )}

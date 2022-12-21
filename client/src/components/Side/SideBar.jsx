@@ -1,11 +1,10 @@
 import React from "react";
-import { Dietas } from "./Filter/Dietas";
+import { Dietas } from "./FilterDietas/Dietas";
 import * as actions from "../../redux/actions";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import Style from "./SideBar.module.css";
 
-// import { useHistory } from "react-router-dom";
 export const SideBar = (props) => {
   const dispatch = useDispatch();
 
@@ -13,7 +12,7 @@ export const SideBar = (props) => {
     event.preventDefault();
     dispatch(actions.getRecipes());
   };
-  // const history = useHistory();
+
   return (
     <>
       <div className={Style.divContainer}>

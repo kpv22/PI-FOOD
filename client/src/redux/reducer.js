@@ -9,7 +9,8 @@ export const POST_RECIPE = "POST_RECIPE";
 export const RECIPE_ID = "RECIPE_ID";
 export const CLEARID = "CLEARID";
 export const SET_PAGES = "SET_PAGES";
-export const FILTER_RECIPE = "FILTER_RECIPE";
+// export const FILTER_RECIPE = "FILTER_RECIPE";
+export const FILTER_CREATED = "FILTER_CREATED";
 
 const initialState = {
   recipes: [true],
@@ -111,55 +112,33 @@ function rootReducer(state = initialState, action) {
 
     ////////////////////////////////////////////////////////////////////////////
 
-    case FILTER_RECIPE:
-      //creo un array con todos los pokemons
-      let filterRecipes = state.recipes;
-      // console.log(filterRecipes);
-      // creo un array vacio para guardar los pokemons filtrados
-      let createdFilter = [];
+    //    Parece que en tu código estás usando la variable filtRecipes para almacenar las recetas filtradas en el caso en que se seleccione "database" en el filtro. Sin embargo, al final de la función estás asignando el valor de createdFiltered a la propiedad recipes del estado, lo que sobreescribe el valor original de filtRecipes.
 
-      // si el payload es igual a "Create", guardo en el array creadoFilter los pokemons que fueron creados en la base de datos
-      if (action.payload === "Created") {
-        createdFilter = filterRecipes.filter((p) => p.createdInDb);
+    // Una posible solución sería almacenar el valor original de filtRecipes en una variable diferente, por ejemplo originalRecipes, y usar esta variable para restaurar el estado original cuando se seleccione "api" en el filtro.Algo así:
+    //       Me disculpo por el error en mi respuesta anterior. Al revisar de nuevo tu código, veo que estás usando la variable filtRecipes para almacenar las recetas originales y la variable copyRecipes para almacenar una copia de las recetas originales.
+
+    // Una forma de solucionar tu problema sería usar la variable copyRecipes para restaurar el estado original de recipes cuando se seleccione "api" en el filtro, en lugar de usar filtRecipes. Algo así:
+
+    case FILTER_CREATED:
+      const copyRecipes = state.recipeCopy;
+      let filtRecipes = state.recipes;
+
+      console.log(filtRecipes);
+      let createdFiltered =
+        action.payload === "api"
+          ? copyRecipes
+          : action.payload === "database"
+          ? filtRecipes.filter((el) => el.id.length > 6)
+          : filtRecipes.filter((el) => el.id.toString().length < 6);
+      if (!createdFiltered.length) {
+        alert("No recipes created yet");
+        createdFiltered = filtRecipes;
       }
-      console.log(createdFilter);
-      // si el payload es igual a "apiCreate", guardo en el array creadoFilter los pokemons que fueron creados en la api
-
-      if (action.payload === "apiCreate") {
-        createdFilter = filterRecipes.filter((p) => !p.createdInDb);
-      }
-
-      console.log(createdFilter);
-      // si el payload es igual a "all", guardo en el array creadoFilter todos los pokemons
       return {
         ...state,
-        // retorno el array con los pokemons filtrados, o todos los pokemons si el payload es igual a "all"
-        recipeCopy: action.payload === "all" ? filterRecipes : createdFilter,
+        recipes: createdFiltered,
+        currentPage: 2,
       };
-
-    // case FILTER_POKE:
-    //   //creo un array con todos los pokemons
-    //   let allPokes = state.filteredPoke;
-
-    //   // creo un array vacio para guardar los pokemons filtrados
-    //   let createdFilter = [];
-    //   console.log(allPokes);
-    //   // si el payload es igual a "weCreate", guardo en el array creadoFilter los pokemons que fueron creados en la base de datos
-    //   if (action.payload === "weCreate") {
-    //     createdFilter = allPokes.filter((p) => p.createdInDb);
-    //   }
-
-    //   // si el payload es igual a "apiCreate", guardo en el array creadoFilter los pokemons que fueron creados en la api
-    //   console.log(allPokes);
-    //   if (action.payload === "apiCreate") {
-    //     createdFilter = allPokes.filter((p) => !p.createdInDb);
-    //   }
-    //   // si el payload es igual a "all", guardo en el array creadoFilter todos los pokemons
-    //   return {
-    //     ...state,
-    //     // retorno el array con los pokemons filtrados, o todos los pokemons si el payload es igual a "all"
-    //     pokemonCopy: action.payload === "all" ? allPokes : createdFilter,
-    //   };
 
     ///////////////////////////////////////////////////////////////////////
 

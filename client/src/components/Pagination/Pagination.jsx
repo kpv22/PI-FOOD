@@ -45,9 +45,9 @@ import { useEffect, useState } from "react";
 import next from "../../assets/next-svgrepo-com.svg";
 import prev from "../../assets/back-svgrepo-com.svg";
 import styles from "./Pagination.module.css";
-import { DesAsc } from "../Side/Filter/OrderByName";
-import { HealthScore } from "../Side/Filter/HealthScore";
-import { Created } from "../Side/Filter/Created";
+import { DesAsc } from "../Nav/Filters/OrderByName";
+import { HealthScore } from "../Nav/Filters/HealthScore";
+import { Created } from "../Nav/Filters/Created";
 
 export default function Pagination({ totalPages }) {
   const dispatch = useDispatch();
@@ -88,10 +88,10 @@ export default function Pagination({ totalPages }) {
 
   return (
     <div className={styles.container}>
-      <h2>Sort by</h2>
+      {/* <h2>Sort by</h2>
       <Created />
       <HealthScore />
-      <DesAsc />
+      <DesAsc /> */}
       <div className={styles.wrapper}>
         <button disabled={input === 1} onClick={prevPage}>
           Prev

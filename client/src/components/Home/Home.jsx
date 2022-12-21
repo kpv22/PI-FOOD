@@ -7,14 +7,17 @@ import { useSelector } from "react-redux";
 import style from "./Home.module.css";
 import { SideBar } from "../Side/SideBar";
 import { Footer } from "../Footer/Footer.jsx";
+import { Nav } from "../Nav/Nav";
 
 export const Home = (props) => {
   return (
     <div>
       <Header />
       <div className={style.container}>
+        <Nav />
         <div className={style.envolver}>
           <SideBar />
+          {/* aqui la barra de los filtros */}
           <Recipe />
         </div>
         <Footer />

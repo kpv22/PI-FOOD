@@ -28,14 +28,17 @@
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  width: 430px;
-  height: 700px;
+  width: 320px;
+  height: 748px;
   background: linear-gradient(
     to bottom,
     right rgb(198, 196, 196) 0%,
     rgba(255, 251, 251, 0.12) 80%
   );
   justify-content: space-evenly;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.1);
+  border: 0.5px solid #fff;
+  border-radius: 8px 8px 0px 0px;
 }
 
 .btn {

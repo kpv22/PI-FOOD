@@ -10,7 +10,8 @@ import {
   RECIPE_ID,
   CLEARID,
   SET_PAGES,
-  FILTER_RECIPE,
+  FILTER_CREATED,
+  // FILTER_RECIPE,
   // CHANGE_STATE,
 } from "./reducer";
 
@@ -94,9 +95,16 @@ export const setPage = (payload) => {
   };
 };
 
-export const filterRecipe = (payload) => {
+// export const filterRecipe = (payload) => {
+//   return {
+//     type: FILTER_RECIPE,
+//     payload,
+//   };
+// };
+
+export const filterCreated = (payload) => {
   return {
-    type: FILTER_RECIPE,
+    type: FILTER_CREATED,
     payload,
   };
 };
