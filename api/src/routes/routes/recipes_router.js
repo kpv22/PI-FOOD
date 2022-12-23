@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { Recipe, Diets } = require("../../db.js");
 const { rece, getByID, postRecipe } = require("../controller/controllers");
 
+///GET que acepta un parámetro opcional de consulta "name" y devuelve todas las recetas o una receta específica si se proporciona el parámetro de consulta.
 router.get("/", async (req, res) => {
   const { name } = req.query;
   try {
@@ -17,6 +18,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+///POST que acepta un cuerpo de solicitud y crea una nueva receta en la base de datos.
 router.post("/", async (req, res) => {
   try {
     const objRecipe = req.body;
@@ -29,31 +31,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// router.post("/", async (req, res) => {
-//   const { name, summary, healthScore, image, steps, diets } = req.body;
-//   try {
-//     if (!name)
-//       return res
-//         .status(400)
-//         .send({ error: "Debe ingresar el name para la receta" });
-//     if (!summary)
-//       return res
-//         .status(400)
-//         .send({ error: "Debe ingresar un summary del receta" });
-//     let createdRecipe = await Recipe.create({
-//       name,
-//       summary,
-//       healthScore,
-//       image,
-//       steps,
-//     });
-
-//     return res.status(200).send("Succesfull");
-//   } catch (error) {
-//     res.status(400).json({ error: error.message });
-//   }
-// });
-
+/// GET que acepta un parámetro de ruta "idReceta" y devuelve una receta específica de la base de datos por su ID.
 router.get("/:idReceta", async (req, res) => {
   const { idReceta } = req.params;
   try {
@@ -64,6 +42,7 @@ router.get("/:idReceta", async (req, res) => {
   }
 });
 
+/// DELETE que acepta un parámetro de ruta "id" y elimina una receta específica de la base de datos por su ID.
 router.delete("/:id", async (req, res) => {
   const { id } = req.params;
   try {

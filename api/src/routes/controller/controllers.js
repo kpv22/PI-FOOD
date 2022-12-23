@@ -22,12 +22,6 @@ const searchAPI = async () => {
         steps: ele.analyzedInstructions[0]?.steps
           .map((ele) => `${ele.number} ${ele.step}`)
           .join(""),
-        // steps: ele.analyzedInstructions[0]?.steps.map((ele2) => {
-        //   return {
-        //     number: ele2.number,
-        //     step: ele2.step,
-        //   };
-        // }),
       };
     });
     return apiInfo;
@@ -39,35 +33,6 @@ const searchAPI = async () => {
 //DB DATA
 
 //Traigo de la Base de Datos toda la info que necesito.
-
-const postRecipe = async (objRecipe) => {
-  try {
-    const { name, summary, healthScore, steps, image, dishTypes, diets } =
-      objRecipe;
-    const recipe = {
-      name,
-      summary,
-      healthScore,
-      steps,
-      image,
-      dishTypes,
-    };
-
-    const dietInfo = await Diets.findAll({
-      where: {
-        name: diets,
-      },
-    });
-    const createRecipe = await Recipe.create(recipe);
-
-    createRecipe.addDiets(dietInfo);
-
-    return Recipe.findAll();
-  } catch (error) {
-    console.log(error);
-  }
-};
-
 const searchDb = async () => {
   try {
     const buscarDB = await Recipe.findAll({
@@ -89,7 +54,6 @@ const searchDb = async () => {
         image: element.image,
         steps: element.steps,
         diets: element.diets?.map((diet) => diet.name),
-        createdInDb: element.createdInDb,
       };
     });
     return obj;
@@ -112,6 +76,37 @@ const getAll = async () => {
   }
 };
 
+/////// acepta un objeto de receta como argumento y crea una nueva entrada en la base de datos con esa información. También agrega información sobre dietas relacionadas a la receta.
+
+const postRecipe = async (objRecipe) => {
+  try {
+    const { name, summary, healthScore, steps, image, diets } =
+      objRecipe;
+    const recipe = {
+      name,
+      summary,
+      healthScore,
+      steps,
+      image,
+    };
+
+    const dietInfo = await Diets.findAll({
+      where: {
+        name: diets,
+      },
+    });
+    const createRecipe = await Recipe.create(recipe);
+
+    createRecipe.addDiets(dietInfo);
+
+    return Recipe.findAll();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//// acepta un parámetro opcional de "name"  uso getAll traigo todas las recetas y busco si conside ese name con alguno
+
 const rece = async (name) => {
   try {
     if (name) {
@@ -132,7 +127,7 @@ const rece = async (name) => {
   }
 };
 
-////CAMBIAR VARIABLES
+//buscar receta por ID
 const getByID = async (idReceta) => {
   try {
     const buscareceta = await getAll();

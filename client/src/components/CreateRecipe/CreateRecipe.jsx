@@ -35,6 +35,7 @@ export const CreateRecipe = (props) => {
     dispatch(actions.getDiets());
   }, [dispatch]);
 
+  ///"handleCheckChange" se utiliza para manejar el cambio de estado de los campos de tipo checkbox que seleccionan las dietas de la receta. Actualiza el estado de "input" y "errorInput" con la nueva información.
   const handleCheckChange = (e) => {
     if (e.target.checked) {
       setInput({
@@ -65,6 +66,8 @@ export const CreateRecipe = (props) => {
       );
     }
   };
+
+  ///"handleChange" se utiliza para manejar el cambio de estado de los demás campos de "input". Actualiza el estado de "input" y "errorInput" con la nueva información.
   const handleChange = (event) => {
     setInput({ ...input, [event.target.name]: event.target.value });
     setErrorInput(
@@ -72,6 +75,7 @@ export const CreateRecipe = (props) => {
     );
   };
 
+  ///"handleSubmit" se utiliza para manejar el envío del formulario. Valida la información de "input" y, si es válida, envía una acción de "postRecipes" al almacenamiento de Redux y navega a la página principal.
   const handleSubmit = (event) => {
     event.preventDefault();
     if (recipes.find((ele) => ele.name === input.name)) {
@@ -205,3 +209,11 @@ export const CreateRecipe = (props) => {
     </div>
   );
 };
+
+// {
+//   input.summary.length ? (
+//     errorInput.summary && <p>{errorInput.summary}</p>
+//   ) : (
+//     <p></p>
+//   );
+// }

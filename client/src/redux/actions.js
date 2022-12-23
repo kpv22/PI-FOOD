@@ -11,8 +11,7 @@ import {
   CLEARID,
   SET_PAGES,
   FILTER_CREATED,
-  // FILTER_RECIPE,
-  // CHANGE_STATE,
+  DELETE_RECIPE,
 } from "./reducer";
 
 export const getRecipes = () => {
@@ -95,13 +94,6 @@ export const setPage = (payload) => {
   };
 };
 
-// export const filterRecipe = (payload) => {
-//   return {
-//     type: FILTER_RECIPE,
-//     payload,
-//   };
-// };
-
 export const filterCreated = (payload) => {
   return {
     type: FILTER_CREATED,
@@ -109,9 +101,16 @@ export const filterCreated = (payload) => {
   };
 };
 
-// export const filterPoke = (payload) => {
-//   return {
-//     type: FILTER_POKE,
-//     payload,
-//   };
-// };
+///////////////////////////////////////////////////////
+
+export const deleteRecipe = (id) => {
+  return async function (dispatch) {
+    const selectRecipe = await axios.delete(
+      "http://localhost:3001/recipes/" + id
+    );
+    return dispatch({
+      type: DELETE_RECIPE,
+      payload: selectRecipe,
+    });
+  };
+};

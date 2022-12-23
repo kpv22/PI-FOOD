@@ -24,6 +24,9 @@ export const OrderByName = (props) => {
   return (
     <div className={Style.btn}>
       <select onChange={(e) => HandleSort(e)}>
+        <option selected disabled>
+          Letter
+        </option>
         <option className={Style.option} value="A-Z">
           A-Z
         </option>

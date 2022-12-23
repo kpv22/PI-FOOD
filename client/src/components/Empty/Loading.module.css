@@ -1,6 +1,15 @@
 .Loading {
-  display: block;
-  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 500px;
   height: 500px;
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 160px;
 }

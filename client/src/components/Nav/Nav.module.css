@@ -49,7 +49,7 @@
 
 .btn {
   color: #fff;
-  background: none;
+  background-color: rgba(109, 108, 108, 0.5);
   font-weight: 900;
   font-size: 1.1em;
   box-sizing: border-box;
@@ -63,9 +63,9 @@
 }
 .btn:hover {
   cursor: pointer;
-  transform: scale(1.1);
-  border-bottom: 2px solid white;
-  padding-top: 5px;
+  background-color: rgba(109, 108, 108, 0.8);
+  transform: translateY(-1px);
+  border-bottom: 1px solid white;
 }
 
 .textDe {
@@ -88,20 +88,14 @@
   font-size: 1.1em;
   height: 40px;
   border: none;
-  background-color: none;
+  background-color: rgba(109, 108, 108, 0.5);
 
   /* border: 2px solid #fff; */
 }
 
 select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
   outline: 0;
-  background-color: transparent;
-  background-image: none;
-  border: none;
+  background-color: rgba(109, 108, 108, 0.5);
   flex: 1;
   font-size: 1.1em;
   padding: 0 0.5em;
@@ -118,76 +112,12 @@ select::-ms-expand {
   background: #6296a8;
 }
 
-.select {
-  font-weight: 900;
-  position: relative;
-  display: flex;
-  font-size: 1.1em;
-  overflow: hidden;
-  border-radius: 2px;
-  line-height: 2.5;
-  /* background: rgba(198, 196, 196); */
-  background-color: transparent;
-  transition: all 0.2s ease-in-out;
-}
-
 .select:hover {
   cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(-1);
   border-bottom: 2px solid white;
 }
 
 .select::-ms-expand {
   background-color: aqua;
 }
-
-/* .box {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin-top: 5%;
-
-  }
-
-  .box select {
-    background: rgba(17, 226, 31, 0.971);
-    color: white;
-    padding: 12px;
-    width: 150px;
-    border: 2px;
-    border: 2px solid white;
-    border-radius: 10px;
-
-    font-size: 12px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-    -webkit-appearance: button;
-    appearance: button;
-    outline: none;
-  }
-
-  .box::before {
-    content: "\f13a";
-    font-family: FontAwesome;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 20%;
-    height: 100%;
-    text-align: center;
-    font-size: 28px;
-    line-height: 45px;
-    color: rgba(255, 255, 255, 0.5);
-
-    background-color: rgba(255, 255, 255, 0.1);
-    pointer-events: none;
-  }
-
-  .box:hover::before {
-    color: rgba(255, 255, 255, 0.6);
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-
-  .box select option {
-    padding: 30px;
-  } */

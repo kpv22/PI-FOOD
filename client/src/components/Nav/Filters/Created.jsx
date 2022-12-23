@@ -13,6 +13,9 @@ export const Created = (props) => {
   return (
     <div className={Style.btn}>
       <select onChange={(e) => createdFilterHandler(e)}>
+        <option selected disabled>
+          origin
+        </option>
         <option value="api">Api Create</option>
         <option value="database">Created</option>
       </select>

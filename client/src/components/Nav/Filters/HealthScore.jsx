@@ -15,6 +15,9 @@ export const HealthScore = () => {
   return (
     <div className={Style.btn}>
       <select onChange={(e) => filter(e)}>
+        <option selected disabled>
+          Health Score
+        </option>
         <option value="max">Max to min</option>
         <option value="desc">Min to Max</option>
       </select>

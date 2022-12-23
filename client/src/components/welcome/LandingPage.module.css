@@ -20,12 +20,11 @@
 }
 
 .btn {
-  border: 2px solid #fff;
   color: #fff;
   display: inline-flex;
   align-items: center;
   align-content: center;
-  background: none;
+  background-color: rgba(109, 108, 108, 0.5);
   font-weight: 900;
   font-size: 1.5em;
   padding: 1rem;
@@ -37,6 +36,8 @@
 }
 .btn:hover {
   cursor: pointer;
+  transform: translateY(-1px);
+  border-bottom: 1px solid white;
 }
 
 .textDe {

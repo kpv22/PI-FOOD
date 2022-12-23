@@ -61,6 +61,7 @@
 
   width: 1200px;
   height: 70px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes grow {
@@ -72,24 +73,22 @@
   }
 }
 .btn {
-  border: 2px solid #fff;
-
   color: #fff;
-  display: inline-flex;
-  align-items: center;
-  align-content: center;
-  background: none;
+  background-color: rgba(109, 108, 108, 0.8);
+
   font-weight: 900;
   font-size: 1.1em;
-  line-height: 1;
   box-sizing: border-box;
   height: 40px;
-  padding: 1rem;
-
-  backdrop-filter: blur(1px);
+  width: auto;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 0px;
+  border: none;
 }
 .btn:hover {
   cursor: pointer;
+  transform: translateY(-1px);
+  border-bottom: 1px solid white;
 }
 
 .textDe {

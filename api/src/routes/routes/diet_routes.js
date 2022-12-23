@@ -3,6 +3,7 @@ const { Router } = require("express");
 const { createDiet } = require("../controller/controllerDiet");
 const router = Router();
 
+///GET trae todas las dietas
 router.get("/", async (req, res) => {
   try {
     const allDiets = await createDiet();

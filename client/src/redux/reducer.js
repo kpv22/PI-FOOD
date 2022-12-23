@@ -9,17 +9,16 @@ export const POST_RECIPE = "POST_RECIPE";
 export const RECIPE_ID = "RECIPE_ID";
 export const CLEARID = "CLEARID";
 export const SET_PAGES = "SET_PAGES";
+export const DELETE_RECIPE = "DELETE_RECIPE";
 
 // export const FILTER_RECIPE = "FILTER_RECIPE";
 export const FILTER_CREATED = "FILTER_CREATED";
 
 const initialState = {
   recipes: [true],
-  //para que no se mezcle el loading con el empty
   searchRecipe: [],
   dietas: [],
   recipeId: [],
-  // loading:false,
   currentPage: 1,
   filterRecipe: [],
   recipeCopy: [],
@@ -33,7 +32,6 @@ function rootReducer(state = initialState, action) {
         recipes: action.payload,
         recipeCopy: action.payload,
         searchRecipe: action.payload,
-        // currentPage: 1,
       };
     ////////////////////////////////////////////////////////////////////////////
     case SEARCH_NAME:
@@ -61,28 +59,17 @@ function rootReducer(state = initialState, action) {
         recipes: filterByDiets,
       };
 
-    /////////////////////////////////////////////////////////////////////////////
+    ///////////////////////La función localeCompare() se utiliza para comparar dos strings en JavaScript y devuelve un valor numérico que indica si el string que se está comparando es mayor (-1), menor (1) o igual (0) al string con el que se está comparando. En este caso, estamos utilizando el valor de retorno de localeCompare() para determinar el orden en el que deben aparecer los elementos en la lista.////////////////////////////////
+
     case ORDER_BY_LETTER:
-      const sortedLetter =
-        action.payload === "A-Z"
-          ? state.recipes.sort(function (a, b) {
-              if (a.name > b.name) {
-                return 1;
-              }
-              if (a.name < b.name) {
-                return -1;
-              }
-              return 0;
-            })
-          : state.recipes.sort(function (a, b) {
-              if (a.name > b.name) {
-                return -1;
-              }
-              if (a.name < b.name) {
-                return 1;
-              }
-              return 0;
-            });
+      const allRecipe = [...state.recipes];
+      const sortedLetter = allRecipe.sort((a, b) => {
+        if (action.payload === "A-Z") {
+          return a.name.localeCompare(b.name);
+        } else {
+          return b.name.localeCompare(a.name);
+        }
+      });
       return {
         ...state,
         recipes: sortedLetter,
@@ -90,33 +77,25 @@ function rootReducer(state = initialState, action) {
       };
 
     ////////////////////////////////////////////////////////////////////////////
-    case HEALTH_SCORE:
-      const allRecipes = [...state.recipes];
-      const orderByHs =
-        action.payload === "max"
-          ? allRecipes.sort((a, b) => {
-              if (a.healthScore < b.healthScore) return 1;
-              if (a.healthScore > b.healthScore) return -1;
-              return 0;
-            })
-          : allRecipes.sort((a, b) => {
-              if (a.healthScore > b.healthScore) return 1;
-              if (a.healthScore < b.healthScore) return -1;
-              return 0;
-            });
 
+    case HEALTH_SCORE:
+      let allRecipes = [...state.recipes]; // hacer una copia del array de recetas
+      let orderByHs; // Declarar una variable para almacenar la array ordenada
+      if (action.payload === "max") {
+        // si el payload is "max", ordene la array en orden descendente
+        orderByHs = allRecipes.sort((a, b) => b.healthScore - a.healthScore);
+      } else {
+        // si el payload no es "max", ordene la array en orden ascendente
+        orderByHs = allRecipes.sort((a, b) => a.healthScore - b.healthScore);
+      }
       return {
         ...state,
-        recipes: orderByHs,
-        currentPage: 2,
+        recipes: orderByHs, //actualice la array de recetas con la array ordenada
+        currentPage: 2, // actualice a la pagina 2
       };
-
     ////////////////////////////////////////////////////////////////////////////
 
-    //    Parece que en tu código estás usando la variable filtRecipes para almacenar las recetas filtradas en el caso en que se seleccione "database" en el filtro. Sin embargo, al final de la función estás asignando el valor de createdFiltered a la propiedad recipes del estado, lo que sobreescribe el valor original de filtRecipes.
-
-    // Una posible solución sería almacenar el valor original de filtRecipes en una variable diferente, por ejemplo originalRecipes, y usar esta variable para restaurar el estado original cuando se seleccione "api" en el filtro.Algo así:
-    //       Me disculpo por el error en mi respuesta anterior. Al revisar de nuevo tu código, veo que estás usando la variable filtRecipes para almacenar las recetas originales y la variable copyRecipes para almacenar una copia de las recetas originales.
+    // la variable filtRecipes para almacenar las recetas originales y la variable copyRecipes para almacenar una copia de las recetas originales.
 
     // Una forma de solucionar tu problema sería usar la variable copyRecipes para restaurar el estado original de recipes cuando se seleccione "api" en el filtro, en lugar de usar filtRecipes. Algo así:
 
@@ -177,6 +156,14 @@ function rootReducer(state = initialState, action) {
         recipeId: [],
       };
     /////////////////////////////////////////////////////////////////////
+
+    case DELETE_RECIPE:
+      return {
+        ...state,
+        recipeCopy: state.recipeCopy.filter((r) => r !== action.payload),
+      };
+
+    //////////////////////////////////////////////////////
 
     default:
       return { ...state };

@@ -4,13 +4,11 @@ import { useSelector, useDispatch } from "react-redux";
 import * as actions from "../../redux/actions";
 import Pagination from "../Pagination/Pagination.jsx";
 import { useState } from "react";
-
 import { Empty } from "../Empty/Empty";
 import Style from "./Recipe.module.css";
 
 export const Recipe = (props) => {
   const dispatch = useDispatch();
-
   const recipes = useSelector((state) => state.recipes);
   const [loading, setLoading] = useState(false);
 

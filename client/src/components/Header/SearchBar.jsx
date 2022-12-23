@@ -1,39 +1,3 @@
-// import React from "react";
-// import { useState } from "react";
-// import { useDispatch } from "react-redux";
-// import * as actions from "../../redux/actions";
-// import styles from "./SearchBar.module.css";
-
-// export const SearchBar = (props) => {
-//   const dispatch = useDispatch();
-//   const [name, setName] = useState("");
-
-//   const handleChange = (e) => {
-//     e.preventDefault();
-//     setName(e.target.value);
-//     console.log(name);
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     dispatch(actions.searchName(name));
-//   };
-
-//   return (
-//     <div className={styles.search}>
-//       <input
-//         className={styles.input}
-//         placeholder="Search Recipe"
-//         type="text"
-//         onChange={handleChange}
-//       />
-//       <button className={styles.btn} onClick={handleSubmit}>
-//         Search
-//       </button>
-//     </div>
-//   );
-// };
-
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -57,7 +21,9 @@ export const SearchBar = (props) => {
     // validamos el valor del campo de búsqueda
     const regex = /^[a-zA-Z0-9]+$/; // expresión regular que solo permite letras y números
     if (!regex.test(name)) {
-      alert("El campo de búsqueda no puede contener caracteres especiales");
+      alert(
+        "El campo de búsqueda no puede contener caracteres especiales o estar vacio"
+      );
       return;
     }
 

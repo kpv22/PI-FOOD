@@ -1,35 +1,3 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
-// import Style from "./RecipeModel.module.css";
-// import { Loading } from "../Empty/Loading";
-
-// export const RecipeModel = (props) => {
-//   return props.name ? (
-//     <div className={Style.card}>
-//       <div key={props.id}>
-//         <Link to={"/detail/" + props.id}>
-//           <img className={Style.img} src={props.image} />
-//         </Link>
-//         <div className={Style.hidden}>
-//           {" "}
-//           <h2 className={Style.name}>{props.name}</h2>
-//           <p>{props.healthScore}</p>
-//           {/* <p>{props.summary}</p> */}
-//           <ul className={Style.ul}>
-//             {props.diets?.map((element, index) => (
-//               <ol className={Style.ol} key={index}>
-//                 {element}
-//               </ol>
-//             ))}
-//           </ul>
-//         </div>
-//       </div>
-//     </div>
-//   ) : (
-//     <Loading />
-//   );
-// };
-
 import React from "react";
 import { Link } from "react-router-dom";
 import Style from "./RecipeModel.module.css";
@@ -50,7 +18,7 @@ export const RecipeModel = (props) => {
           ))}
         </ul>
         <Link to={"/detail/" + props.id}>
-          <button className={Style.cardbtn}>learn more</button>
+          <button className={Style.cardbtn}>More Details</button>
         </Link>{" "}
       </div>
     </div>

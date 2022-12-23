@@ -1,20 +1,20 @@
 .btn {
-  border: 2px solid #fff;
-  border-radius: 3px;
   color: #fff;
-  display: inline-flex;
-  align-items: center;
-  align-content: center;
-  background: none;
+  background-color: rgba(109, 108, 108, 0.8);
+
   font-weight: 900;
   font-size: 1.1em;
-  line-height: 1;
   box-sizing: border-box;
   height: 40px;
-  padding: 1rem;
+  width: auto;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 0px;
+  border: none;
 }
 .btn:hover {
   cursor: pointer;
+  transform: translateY(-1px);
+  border-bottom: 1px solid white;
 }
 
 .input {
