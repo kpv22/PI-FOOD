@@ -62,7 +62,7 @@
 
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../redux/actions";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./Pagination.module.css";
 
 export default function Pagination({ totalPages }) {
@@ -98,6 +98,8 @@ export default function Pagination({ totalPages }) {
   const onChange = (e) => {
     setInput(e.target.value);
   };
+
+  // Este componente renderiza una barra de paginación que permite al usuario navegar entre diferentes páginas de una lista. La barra de paginación incluye botones "Anterior" y "Siguiente" para avanzar o retroceder una página, y un cuadro de texto en el que el usuario puede ingresar manualmente el número de página que desea ver.
 
   return (
     <div className={styles.container}>

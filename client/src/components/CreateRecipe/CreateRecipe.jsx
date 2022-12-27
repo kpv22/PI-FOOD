@@ -180,20 +180,20 @@ export const CreateRecipe = (props) => {
           <div className={style.map}>
             <div className={style.diets}>
               <label>Types of Diets:</label>
-              {dietas?.map((element, index) => {
+              {dietas?.map((diet) => {
                 return (
-                  <label key={index}>
+                  <div key={diet.name}>
                     <input
-                      className={style.checks}
-                      key={element.id}
+                      className={style.checkbox}
                       type="checkbox"
-                      value={element.name}
-                      name={element.name}
+                      id={diet.id}
+                      value={diet.name}
                       onChange={handleCheckChange}
                     />
-
-                    {element.name}
-                  </label>
+                    <label htmlFor={diet.id} className={style.name}>
+                      {diet.name}
+                    </label>
+                  </div>
                 );
               })}
               {errorInput.diets ? (

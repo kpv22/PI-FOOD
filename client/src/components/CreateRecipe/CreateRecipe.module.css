@@ -130,7 +130,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 10px;
+
   width: 40%;
 }
 
@@ -219,4 +219,187 @@
 .checks {
   margin-top: 4px;
   width: 40px;
+}
+
+@media (max-width: 800px) {
+  .createConteiner {
+    padding-right: 10%;
+    padding-left: 1%;
+    padding-top: 200px;
+    width: 100%;
+    max-width: 800px;
+  }
+  .createConteiner:before {
+    background: #1b2030;
+  }
+  .form {
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    gap: 1rem;
+    border: none;
+    margin-bottom: 150px;
+  }
+
+  .info {
+    width: 100%;
+  }
+
+  .map {
+    width: 100%;
+  }
+  .btnDisable {
+    position: absolute;
+    top: 760px;
+    right: 40px;
+  }
+
+  .btn {
+    position: absolute;
+    top: 760px;
+    right: 40px;
+    z-index: 9;
+  }
+  .btn2 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .createConteiner {
+    padding-right: 10%;
+    padding-left: 1%;
+    padding-top: 240px;
+    padding-bottom: 200px;
+    /* margin-bottom: 100px; */
+    width: 100%;
+    max-width: 800px;
+  }
+  .createConteiner:before {
+    background: #1b2030;
+  }
+  .form {
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    gap: 1rem;
+    border: none;
+    margin-bottom: 150px;
+  }
+
+  .info {
+    width: 100%;
+  }
+
+  .map {
+    width: 90%;
+  }
+  .btnDisable {
+    position: absolute;
+    top: 900px;
+    right: 90px;
+  }
+
+  .btn {
+    position: absolute;
+    top: 900px;
+    right: 90px;
+    z-index: 9;
+  }
+  .btn2 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  .info > input {
+    resize: none;
+    text-indent: 10px;
+    width: 330px;
+    height: 25px;
+    border-radius: 3px;
+    border: none;
+    margin-bottom: 12px;
+  }
+
+  .info > textarea {
+    text-indent: 10px;
+    resize: none;
+    width: 330px;
+    height: 100px;
+    border-radius: 3px;
+    border: none;
+    margin-bottom: 12px;
+  }
+
+  .info > span {
+    width: 200px;
+    height: 60px;
+    color: rgb(208, 72, 72);
+    padding-bottom: 1px;
+  }
+  .diets {
+    margin-left: 50px;
+    margin-right: 5px;
+  }
+  .diets > span {
+    width: 200px;
+    height: 60px;
+    padding-bottom: 1px;
+  }
+}
+
+.diets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkbox {
+  display: none; /* ocultamos la caja del checkbox */
+}
+
+.name {
+  /* estilos para el botón */
+  display: inline-block;
+  padding: 9px;
+  border: 0.1em solid #ffffff;
+  margin: 2px;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #ffffff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 2px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  background-color: rgba(109, 108, 108, 0.8);
+  text-align: center;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  height: auto;
+  width: 200px;
+}
+
+.name:hover {
+  /* estilos para el hover */
+  cursor: pointer;
+  background-color: #555555;
+  transform: translateY(-1px);
+  border-bottom: 1px solid white;
+}
+
+.name:active {
+  /* estilos para cuando el botón está activo (pulsado) */
+  background-color: #111111;
+}
+
+input:checked + .name {
+  /* estilos para cuando el checkbox está seleccionado */
+  /* background-color: #009900; */
+  transform: translateY(-1px);
+  border-bottom: 3px solid #fff;
+  background-color: rgba(109, 108, 108, 0.4);
 }

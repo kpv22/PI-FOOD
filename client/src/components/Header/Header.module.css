@@ -94,3 +94,10 @@
 .textDe {
   text-decoration: none;
 }
+
+@media (max-width: 1050px) {
+  .nav {
+    width: 90%;
+    margin-left: 5%;
+  }
+}

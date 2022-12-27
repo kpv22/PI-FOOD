@@ -19,7 +19,7 @@ export const Footer = () => {
           LinkedIn
           <img
             src="https://i.postimg.cc/xThMr2PB/logo-Linkedin.png"
-            alt="github"
+            alt="Linkedln"
           />
         </a>
         <a href="https://github.com/kpv22">

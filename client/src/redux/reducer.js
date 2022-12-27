@@ -10,6 +10,7 @@ export const RECIPE_ID = "RECIPE_ID";
 export const CLEARID = "CLEARID";
 export const SET_PAGES = "SET_PAGES";
 export const DELETE_RECIPE = "DELETE_RECIPE";
+// export const UPDATE_RECIPE = "UPDATE_RECIPE";
 
 // export const FILTER_RECIPE = "FILTER_RECIPE";
 export const FILTER_CREATED = "FILTER_CREATED";
@@ -49,14 +50,20 @@ function rootReducer(state = initialState, action) {
       };
 
     ////////////////////////////////////////////////////////////////////////////
-    case FILTER_DIETS:
-      const filterByDiets = state.recipes.filter((element) =>
-        element.diets.includes(action.payload) ? element : null
-      );
+    // case FILTER_DIETS:
+    //   const filterByDiets = state.recipes.filter((element) =>
+    //     element.diets.includes(action.payload) ? element : null
+    //   );
 
+    //   return {
+    //     ...state,
+    //     recipes: filterByDiets,
+    //   };
+
+    case FILTER_DIETS:
       return {
         ...state,
-        recipes: filterByDiets,
+        recipes: [...action.payload],
       };
 
     ///////////////////////La función localeCompare() se utiliza para comparar dos strings en JavaScript y devuelve un valor numérico que indica si el string que se está comparando es mayor (-1), menor (1) o igual (0) al string con el que se está comparando. En este caso, estamos utilizando el valor de retorno de localeCompare() para determinar el orden en el que deben aparecer los elementos en la lista.////////////////////////////////
@@ -95,9 +102,7 @@ function rootReducer(state = initialState, action) {
       };
     ////////////////////////////////////////////////////////////////////////////
 
-    // la variable filtRecipes para almacenar las recetas originales y la variable copyRecipes para almacenar una copia de las recetas originales.
-
-    // Una forma de solucionar tu problema sería usar la variable copyRecipes para restaurar el estado original de recipes cuando se seleccione "api" en el filtro, en lugar de usar filtRecipes. Algo así:
+    //  copyRecipes para restaurar el estado original de recipes cuando se seleccione "api" en el filtro, en lugar de usar filtRecipes. Algo así:
 
     case FILTER_CREATED:
       const copyRecipes = state.recipeCopy;
@@ -164,6 +169,23 @@ function rootReducer(state = initialState, action) {
       };
 
     //////////////////////////////////////////////////////
+
+    // case UPDATE_RECIPE: //COMPLETAR ACA
+    //   const allMyrecipe = state.recipeCopy;
+    //   const ReceUpdate = allMyrecipe.find((p) => p.id === action.payload.id);
+    //   ReceUpdate.name = action.payload.name;
+    //   ReceUpdate.summary = action.payload.summary;
+    //   ReceUpdate.healthScore = action.payload.healthScore;
+    //   ReceUpdate.image = action.payload.image;
+    //   ReceUpdate.steps = action.payload.steps;
+    //   ReceUpdate.diets = action.payload.diets;
+
+    //   return {
+    //     ...state,
+    //     recipeCopy: allMyrecipe,
+    //   };
+
+    /////////////////////////////////////////////////////
 
     default:
       return { ...state };

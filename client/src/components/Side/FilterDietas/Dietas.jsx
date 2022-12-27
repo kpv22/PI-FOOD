@@ -3,32 +3,35 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import * as actions from "../../../redux/actions";
 import { useDispatch } from "react-redux";
-import Style from "../SideBar.module.css";
+import Style from "./Dietas.module.css";
 
-export const Dietas = () => {
+export const Dietas = (props) => {
   const dietas = useSelector((state) => state.dietas);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(actions.getDiets());
   }, []);
-
-  const handleChange = (e) => {
-    e.preventDefault();
-    dispatch(actions.filterByDiets(e.target.value));
-  };
+  console.log(props);
 
   return (
     <div className={Style.diets}>
-      {dietas?.map((temp, index) => (
-        <button
-          className={Style.btn}
-          key={index}
-          onClick={(e) => handleChange(e)}
-          value={temp.name}
-        >
-          {temp.name}
-        </button>
-      ))}
+     
+      {dietas?.map((diet) => {
+        return (
+          <div key={diet.name}>
+            <input
+              className={Style.checkbox}
+              type="checkbox"
+              id={diet.id}
+              value={diet.name}
+              onChange={props.handleChange2}
+            />
+            <label htmlFor={diet.id} className={Style.name}>
+              {diet.name}
+            </label>
+          </div>
+        );
+      })}
     </div>
   );
 };

@@ -12,6 +12,7 @@ import {
   SET_PAGES,
   FILTER_CREATED,
   DELETE_RECIPE,
+  // UPDATE_RECIPE,
 } from "./reducer";
 
 export const getRecipes = () => {
@@ -47,7 +48,7 @@ export const RecipeID = (id) => {
 export const filterByDiets = (payload) => {
   return {
     type: FILTER_DIETS,
-    payload,
+    payload: payload,
   };
 };
 
@@ -114,3 +115,14 @@ export const deleteRecipe = (id) => {
     });
   };
 };
+
+/////////////////////////////////////////////////////
+
+// export const updateRecipe = (id, payload) => {
+//   return async function (dispatch) {
+//     await axios.put("http://localhost:3001/recipes/" + id, payload);
+//     return dispatch({
+//       type: UPDATE_RECIPE,
+//     });
+//   };
+// };

@@ -16,6 +16,22 @@ export const RecipeDetail = () => {
   const dispatch = useDispatch();
   const recipeId = useSelector((state) => state.recipeId);
 
+  function removeLinks(html) {
+    // Crea un elemento div temporal
+    const temp = document.createElement("div");
+    // Asigna la cadena de texto HTML al contenido del elemento div
+    temp.innerHTML = html;
+    // Obtiene todas las etiquetas a del elemento div
+    const links = temp.getElementsByTagName("a");
+    // Recorre todas las etiquetas a y elimina el atributo href
+    for (let i = 0; i < links.length; i++) {
+      links[i].removeAttribute("href");
+    }
+    // Devuelve el contenido del elemento div sin los enlaces
+    return temp.innerHTML;
+  }
+  const htmlWithoutLinks = removeLinks(recipeId.summary);
+
   useEffect(() => {
     dispatch(actions.RecipeID(id));
     dispatch(actions.getDiets());
@@ -70,13 +86,14 @@ export const RecipeDetail = () => {
               <br />
             </div>
             <div className={Style.summary}>
-              <p>
+              <div>
                 <h4>Summary</h4>
+
                 <div
                   className={Style.text}
-                  dangerouslySetInnerHTML={{ __html: recipeId?.summary }}
+                  dangerouslySetInnerHTML={{ __html: htmlWithoutLinks }}
                 ></div>
-              </p>
+              </div>
               <img
                 className={Style.img}
                 src={recipeId.image}
@@ -92,14 +109,23 @@ export const RecipeDetail = () => {
               ))}
             </div>
             <div className={recipeId.steps ? Style.steps : Style.hidden}>
-              {recipeId.steps && <h4>Steps</h4>}
-              <div>{recipeId.steps && <p>{recipeId.steps}</p>}</div>
+              {recipeId.steps ? <h4>Steps</h4> : <br />}
+
+              <div>
+                {recipeId.steps ? (
+                  <p>{recipeId.steps}</p>
+                ) : (
+                  <>
+                    <br />
+                    <br />
+                  </>
+                )}
+              </div>
             </div>
           </div>
         ) : (
           <Loading />
         )}
-
         <Footer />
       </div>
     </div>
