@@ -121,3 +121,35 @@ select::-ms-expand {
 .select::-ms-expand {
   background-color: aqua;
 }
+
+@media (max-width: 400px) {
+  .container {
+    height: 150px;
+    border: none;
+  }
+  .filters {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    height: 150px;
+    border: none;
+  }
+  .filters {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: none;
+  }
+}

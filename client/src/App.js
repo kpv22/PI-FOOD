@@ -5,6 +5,7 @@ import { Landing } from "./components/welcome/LandingPage.jsx";
 import { Home } from "./components/Home/Home.jsx";
 import { CreateRecipe } from "./components/CreateRecipe/CreateRecipe";
 import { RecipeDetail } from "./components/RecipeDetail/RecipeDetail";
+import { UpdateRecipe } from "./components/CreateRecipe/UpdateRecipe";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route exact path="/home" component={Home} />
       <Route exact path="/create" component={CreateRecipe} />
       <Route exact path="/detail/:id" component={RecipeDetail}></Route>
+      <Route exact path="/update/:id" component={UpdateRecipe}></Route>
     </div>
   );
 }

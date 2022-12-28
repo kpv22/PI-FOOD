@@ -82,8 +82,8 @@
 
 @media (max-width: 400px) {
   .footer {
-    position: absolute;
-    top: 1200px;
+    position: relative;
+    top: 1300px;
     z-index: 2;
     font-size: 12px;
     margin-left: 20%;

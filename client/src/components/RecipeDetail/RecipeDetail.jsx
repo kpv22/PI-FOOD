@@ -66,7 +66,10 @@ export const RecipeDetail = () => {
           {console.log(id.length)}
           {id.length > 6 ? (
             <>
-              {/* <button className={Style.button}>Edit Recipe</button> */}
+              <Link to={"/update/" + id}>
+                <button className={Style.button}>Edit Recipe</button>
+              </Link>
+
               <button onClick={() => handleDelete()} className={Style.button}>
                 Delete Recipe
               </button>

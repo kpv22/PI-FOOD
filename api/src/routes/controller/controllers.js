@@ -30,6 +30,34 @@ const searchAPI = async () => {
   }
 };
 
+// const searchAPI = async () => {
+//   try {
+//     const BuscarenApi = await axios.get(
+//       `https://api.spoonacular.com/recipes/complexSearch?apiKey=ffcef7f186144ae5a4649387a05de6e1&addRecipeInformation=true&number=100`,
+//       { headers: { "Accept-Encoding": "gzip,deflate,compress" } }
+//     );
+//     if (BuscarenApi.status === 200) {
+//       let info = await BuscarenApi.data.results?.map((ele) => {
+//         return {
+//           id: ele.id,
+//           name: ele.title,
+//           summary: ele.summary,
+//           healthScore: ele.healthScore,
+//           image: ele.image,
+//           dishTypes: ele.dishTypes?.map((ele) => ele),
+//           diets: ele.diets?.map((element) => element),
+//           steps: ele.analyzedInstructions[0]?.steps
+//             .map((ele) => `${ele.number} ${ele.step}`)
+//             .join(" "),
+//         };
+//       });
+//       return info;
+//     }
+//   } catch (err) {
+//     return err;
+//   }
+// };
+
 //DB DATA
 
 //Traigo de la Base de Datos toda la info que necesito.
@@ -80,8 +108,7 @@ const getAll = async () => {
 
 const postRecipe = async (objRecipe) => {
   try {
-    const { name, summary, healthScore, steps, image, diets } =
-      objRecipe;
+    const { name, summary, healthScore, steps, image, diets } = objRecipe;
     const recipe = {
       name,
       summary,
