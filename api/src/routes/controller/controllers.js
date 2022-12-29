@@ -1,12 +1,10 @@
 const axios = require("axios");
 const { Recipe, Diets } = require("../../db.js");
-
+require("dotenv").config();
+const { YOUR_API_KEY } = process.env;
 // Traigo de la API toda la info!!!
 const searchAPI = async () => {
   try {
-    // const apiUrl = await axios.get(
-    //   `https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY}&addRecipeInformation=true&number=100`
-    // );
     const apiUrl = await axios.get(
       `https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5`
     );
@@ -33,7 +31,7 @@ const searchAPI = async () => {
 // const searchAPI = async () => {
 //   try {
 //     const BuscarenApi = await axios.get(
-//       `https://api.spoonacular.com/recipes/complexSearch?apiKey=ffcef7f186144ae5a4649387a05de6e1&addRecipeInformation=true&number=100`,
+//       `https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY}&addRecipeInformation=true&number=100`,
 //       { headers: { "Accept-Encoding": "gzip,deflate,compress" } }
 //     );
 //     if (BuscarenApi.status === 200) {
