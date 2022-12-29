@@ -7,7 +7,7 @@ import { CreateRecipe } from "./components/CreateRecipe/CreateRecipe";
 import { RecipeDetail } from "./components/RecipeDetail/RecipeDetail";
 import { UpdateRecipe } from "./components/CreateRecipe/UpdateRecipe";
 import axios from "axios";
-axios.defaults.baseURL = "http://localhost:3001/";
+axios.defaults.baseURL = "https://pi-food-production-5420.up.railway.app/";
 
 function App() {
   return (
