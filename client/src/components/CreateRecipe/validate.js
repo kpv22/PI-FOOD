@@ -6,7 +6,7 @@ const validate = (input) => {
 
   const patterns = {
     name: {
-      pattern: /^\S[a-zA-Z]{1,30}\S$/,
+      pattern: /^\S[a-zA-Z\s]{1,20}\S$/,
       errorMessage: "El nombre de tu receta debe ser con letras de A la Z",
     },
     healthScore: {

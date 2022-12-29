@@ -4,6 +4,7 @@
   justify-content: flex-start;
   font-size: 1.1rem;
   font-weight: bolder;
+  display: none;
 }
 
 .filters {
@@ -29,7 +30,7 @@
   align-items: center;
   flex-wrap: wrap;
   width: 320px;
-  height: 760px;
+  height: 600px;
   background: linear-gradient(
     to bottom,
     right rgb(198, 196, 196) 0%,
@@ -38,7 +39,10 @@
   justify-content: space-evenly;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.1);
   border: 0.5px solid #fff;
-  border-radius: 8px 8px 0px 0px;
+  border-radius: 8px 8px 8px 8px;
+  position: fixed;
+  top: 80px;
+  right: 60px;
 }
 
 .btn {
@@ -82,8 +86,15 @@
   background-color: none;
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .divContainer {
     display: none;
   }
+} */
+
+.x {
+  visibility: visible;
+  width: 40px;
+  height: 45px;
+  cursor: pointer;
 }

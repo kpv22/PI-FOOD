@@ -60,7 +60,7 @@ export const RecipeDetail = () => {
         <div className={Style.Nav}>
           <Link to="/home">
             <button className={Style.button} onClick={() => handleHome()}>
-              Regresar al home
+              Back to Home
             </button>
           </Link>
           {console.log(id.length)}

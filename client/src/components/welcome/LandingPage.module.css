@@ -77,3 +77,26 @@
     border-color: white;
   }
 }
+@media (max-width: 800px) {
+  .typewriter h1 {
+    font-size: 35px; /* Tamaño de fuente más pequeño */
+  }
+}
+
+@media (max-width: 700px) {
+  .typewriter h1 {
+    font-size: 30px; /* Tamaño de fuente más pequeño */
+  }
+}
+
+@media (max-width: 600px) {
+  .typewriter h1 {
+    font-size: 23px; /* Tamaño de fuente más pequeño */
+  }
+}
+
+@media (max-width: 400px) {
+  .typewriter h1 {
+    font-size: 20px; /* Tamaño de fuente más pequeño */
+  }
+}

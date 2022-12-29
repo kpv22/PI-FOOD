@@ -12,6 +12,7 @@ import {
   SET_PAGES,
   FILTER_CREATED,
   DELETE_RECIPE,
+  BURGER,
 } from "./reducer";
 
 export const getRecipes = () => {
@@ -75,6 +76,12 @@ export const orderByHs = (payload) => {
 export const ClearId = () => {
   return {
     type: CLEARID,
+  };
+};
+export const Burger = (payload) => {
+  return {
+    type: BURGER,
+    payload,
   };
 };
 

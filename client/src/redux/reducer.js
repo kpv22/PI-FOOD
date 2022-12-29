@@ -10,6 +10,7 @@ export const RECIPE_ID = "RECIPE_ID";
 export const CLEARID = "CLEARID";
 export const SET_PAGES = "SET_PAGES";
 export const DELETE_RECIPE = "DELETE_RECIPE";
+export const BURGER = "BURGER";
 // export const UPDATE_RECIPE = "UPDATE_RECIPE";
 
 // export const FILTER_RECIPE = "FILTER_RECIPE";
@@ -23,6 +24,7 @@ const initialState = {
   currentPage: 1,
   filterRecipe: [],
   recipeCopy: [],
+  hamburguer: false,
 };
 
 function rootReducer(state = initialState, action) {
@@ -47,6 +49,12 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         dietas: action.payload,
+      };
+
+    case BURGER:
+      return {
+        ...state, // combina el estado actual con el nuevo objeto
+        hamburguer: action.payload,
       };
 
     ////////////////////////////////////////////////////////////////////////////

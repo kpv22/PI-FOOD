@@ -1,11 +1,14 @@
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   font-size: 1.1rem;
   font-weight: bolder;
   width: 100%;
+}
+.hambur {
+  visibility: hidden;
 }
 
 .filters {
@@ -21,6 +24,11 @@
   outline: 0;
   margin: 5px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.1);
+  /* display: none; */
+}
+
+.side {
+  display: none;
 }
 
 .diets {
@@ -136,6 +144,10 @@ select::-ms-expand {
     font-size: 14px;
     box-shadow: none;
   }
+
+  .side {
+    display: inline;
+  }
 }
 
 @media (max-width: 600px) {
@@ -146,10 +158,31 @@ select::-ms-expand {
   .filters {
     border: none;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     text-align: center;
     font-size: 14px;
     box-shadow: none;
+    margin-left: 10px;
+    margin-right: 5%;
+    z-index: 9;
+    margin-left: 40px;
+    gap: 6px;
+  }
+  .hambur {
+    visibility: visible;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+  }
+  .x {
+    visibility: visible;
+    width: 40px;
+    height: 45px;
+    cursor: pointer;
+  }
+
+  .side {
+    display: inline;
   }
 }

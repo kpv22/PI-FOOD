@@ -93,7 +93,7 @@ export const CreateRecipe = (props) => {
       diets: [],
       steps: "",
     });
-    alert("receta creada correctamente");
+    alert("Recipe created successfully");
     history.push("/home");
   };
 
@@ -116,7 +116,7 @@ export const CreateRecipe = (props) => {
               onChange={(e) => handleChange(e)}
             />
             {errorInput.name ? <span>{errorInput.name}</span> : <span></span>}
-            <label>Descripcion:</label>
+            <label>Description:</label>
 
             <textarea
               type="text"
@@ -130,7 +130,7 @@ export const CreateRecipe = (props) => {
             ) : (
               <span></span>
             )}
-            <label>Puntaje nutricional:</label>
+            <label>HealthScore</label>
             <input
               type="number"
               name="healthScore"

@@ -1,8 +1,8 @@
 import React from "react";
-// import { Created } from "./Filters/Created";
 import { HealthScore } from "./Filters/HealthScore";
 import { OrderByName } from "./Filters/OrderByName";
 import styles from "../Nav/Nav.module.css";
+import { SideMobile } from "./SideMobile";
 
 export const Nav = (props) => {
   return (
@@ -12,6 +12,9 @@ export const Nav = (props) => {
         {/* <Created /> */}
         <HealthScore />
         <OrderByName />
+        <div className={styles.side}>
+          <SideMobile />
+        </div>
       </div>
     </div>
   );
