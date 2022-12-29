@@ -6,6 +6,8 @@ import { Home } from "./components/Home/Home.jsx";
 import { CreateRecipe } from "./components/CreateRecipe/CreateRecipe";
 import { RecipeDetail } from "./components/RecipeDetail/RecipeDetail";
 import { UpdateRecipe } from "./components/CreateRecipe/UpdateRecipe";
+import axios from "axios";
+axios.defaults.baseURL = "http://localhost:3001/";
 
 function App() {
   return (
