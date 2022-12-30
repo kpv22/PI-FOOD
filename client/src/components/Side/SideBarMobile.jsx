@@ -49,12 +49,6 @@ export const SideBarMobile = (props) => {
     filtroDietas(seleccionadas, ele.diets)
   );
 
-  // //barrra de busqueda
-  // const handleChange = (e) => {
-  //   e.preventDefault();
-  //   setSearch(e.target.value);
-  // };
-
   useEffect(() => {
     dispatch(actions.filterByDiets(filtro));
   }, [seleccionadas]);
@@ -64,8 +58,11 @@ export const SideBarMobile = (props) => {
   };
   return (
     <div className={Style.divContainer}>
-      <h2>Filter By Diets</h2>
-      {closeIcon}
+      <div className={Style.h2}>
+        <h2>Filter By Diets</h2>
+        {closeIcon}
+      </div>
+
       <Dietas handleChange2={handleChange2} />
       <button className={Style.btn} onClick={(event) => handleClick(event)}>
         <p>Limpiar filtros</p>

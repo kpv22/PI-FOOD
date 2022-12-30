@@ -23,7 +23,7 @@
 }
 
 .divContainer {
-  z-index: 20px;
+  z-index: 100px;
   color: #fff;
   backdrop-filter: blur(80px);
   display: flex;
@@ -76,6 +76,15 @@
 
 .textDe {
   text-decoration: none;
+}
+
+.h2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 80%;
 }
 
 .option {

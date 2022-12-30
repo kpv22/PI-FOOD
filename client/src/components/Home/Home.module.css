@@ -47,7 +47,7 @@
   backface-visibility: hidden;
   scale: (1, 1);
   transform: translateZ(0);
-  background: #1b2030 url(../../assets/pizza.jpg) no-repeat;
+  /* background: #1b2030 url(../../assets/pizza.jpg) no-repeat; */
   background-size: 100%;
   background-attachment: fixed;
   animation: grow 360s linear 10ms infinite;
