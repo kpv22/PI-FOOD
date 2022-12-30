@@ -8,6 +8,7 @@ import { RecipeDetail } from "./components/RecipeDetail/RecipeDetail";
 import { UpdateRecipe } from "./components/CreateRecipe/UpdateRecipe";
 import axios from "axios";
 axios.defaults.baseURL = "https://pi-food-production-5420.up.railway.app/";
+// axios.defaults.baseURL = "http://localhost:3001/";
 
 function App() {
   return (

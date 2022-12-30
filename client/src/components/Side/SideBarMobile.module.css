@@ -23,6 +23,7 @@
 }
 
 .divContainer {
+  z-index: 20px;
   color: #fff;
   backdrop-filter: blur(80px);
   display: flex;
@@ -30,7 +31,7 @@
   align-items: center;
   flex-wrap: wrap;
   width: 320px;
-  height: 600px;
+  height: 565px;
   background: linear-gradient(
     to bottom,
     right rgb(198, 196, 196) 0%,
@@ -39,10 +40,10 @@
   justify-content: space-evenly;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.1);
   border: 0.5px solid #fff;
-  border-radius: 8px 8px 8px 8px;
+  border-radius: 8px;
   position: fixed;
   top: 80px;
-  right: 60px;
+  right: 8%;
 }
 
 .btn {

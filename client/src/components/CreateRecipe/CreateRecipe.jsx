@@ -130,6 +130,7 @@ export const CreateRecipe = (props) => {
             ) : (
               <span></span>
             )}
+
             <label>HealthScore</label>
             <input
               type="number"
@@ -172,7 +173,10 @@ export const CreateRecipe = (props) => {
                 <button className={style.btnDisable} type="submit" disabled>
                   Create Recipe
                 </button>
-                <span> Incomplete required fields</span>
+                <span className={style.incomplete}>
+                  {" "}
+                  Incomplete required fields
+                </span>
               </div>
             )}
           </div>
@@ -197,7 +201,7 @@ export const CreateRecipe = (props) => {
                 );
               })}
               {errorInput.diets ? (
-                <span>{errorInput.diets}</span>
+                <span className={style.dietError}>{errorInput.diets}</span>
               ) : (
                 <span></span>
               )}

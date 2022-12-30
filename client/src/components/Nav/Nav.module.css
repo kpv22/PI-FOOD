@@ -163,11 +163,11 @@ select::-ms-expand {
     text-align: center;
     font-size: 14px;
     box-shadow: none;
-    margin-left: 10px;
-    margin-right: 5%;
+    margin-left: 3px;
+    margin-right: 10%;
     z-index: 9;
-    margin-left: 40px;
-    gap: 6px;
+    margin-left: 30px;
+    gap: 4px;
   }
   .hambur {
     visibility: visible;

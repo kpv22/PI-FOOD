@@ -101,3 +101,13 @@
     margin-left: 5%;
   }
 }
+
+@media (max-width: 400px) {
+  .header {
+    background-color: rgb(48, 47, 50);
+  }
+
+  .header:before {
+    background: none;
+  }
+}

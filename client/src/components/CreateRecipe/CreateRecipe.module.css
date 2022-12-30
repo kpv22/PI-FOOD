@@ -228,7 +228,10 @@
     padding-left: 1%;
     padding-top: 200px;
     width: 100%;
-    max-width: 800px;
+    height: 1400px;
+    gap: 15px;
+    position: none;
+    overflow: none;
   }
   .createConteiner:before {
     background: #1b2030;
@@ -237,7 +240,7 @@
     flex-direction: column;
     width: 100%;
     max-width: 800px;
-    gap: 1rem;
+    gap: 2.5rem;
     border: none;
     margin-bottom: 350px;
   }
@@ -252,25 +255,30 @@
   }
   .btnDisable {
     position: absolute;
-    top: 1000px;
-    right: 40px;
+    top: 1020px;
+    right: 90px;
   }
   .diets {
     position: relative;
     padding: 4px;
-    top: 50px;
+    top: 40px;
   }
 
   .btn {
     position: absolute;
-    top: 1000px;
-    right: 40px;
+    top: 1020px;
+    right: 90px;
     z-index: 9;
   }
   .btn2 {
     position: absolute;
     top: 10px;
     right: 10px;
+  }
+
+  .name {
+    font-size: 14px;
+    height: 30px;
   }
 }
 
@@ -319,4 +327,109 @@ input:checked + .name {
   /* transform: translateY(-1px); */
   border-bottom: 3px solid #fff;
   background-color: rgba(109, 108, 108, 0.4);
+}
+
+@media (max-width: 400px) {
+  .createConteiner {
+    padding-right: 10%;
+    padding-left: 1%;
+    padding-top: 200px;
+    width: 100%;
+    height: 1450px;
+    margin-bottom: 0px;
+  }
+
+  .form {
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    gap: 2.5rem;
+    border: none;
+    margin-bottom: 360px;
+  }
+
+  .info {
+    width: 100%;
+  }
+
+  .map {
+    width: 100%;
+    border: none;
+  }
+  .btnDisable {
+    position: absolute;
+    top: 1020px;
+    right: 90px;
+  }
+  .diets {
+    position: relative;
+    padding: 4px;
+    top: 20px;
+  }
+  .name {
+    font-size: 14px;
+    height: 30px;
+  }
+  .btn {
+    position: absolute;
+    top: 1020px;
+    right: 90px;
+    z-index: 9;
+  }
+  .btn2 {
+    position: absolute;
+    top: 2px;
+    right: 180px;
+    height: 10px;
+    font-size: 14px;
+  }
+
+  .info > label {
+    margin: 0px;
+    margin-top: 31px;
+  }
+
+  .incomplete {
+    display: none;
+  }
+
+  .info > input {
+    resize: none;
+    text-indent: 10px;
+
+    width: 250px;
+    height: 25px;
+    border-radius: 3px;
+    border: none;
+    margin: 1px;
+  }
+
+  .info > textarea {
+    text-indent: 10px;
+    resize: none;
+    width: 250px;
+    height: 120px;
+    border-radius: 3px;
+    border: none;
+    margin-bottom: 2px;
+  }
+
+  .dietError {
+    color: #eee !important;
+    width: 250px !important;
+    font-size: 16px;
+  }
+
+  .info > span {
+    width: 280px;
+    height: 20px;
+    color: rgb(208, 72, 72);
+    padding-bottom: 8px;
+    margin-top: 10px;
+  }
+  .span1 {
+    font-size: 18px;
+    width: 300px;
+    height: 80px;
+  }
 }
