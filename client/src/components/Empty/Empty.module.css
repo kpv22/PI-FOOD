@@ -20,6 +20,7 @@
   width: 90%;
   height: 110px;
   border: 2px white solid;
+  color: darkgrey;
   outline: 0;
   margin: 5px;
   backdrop-filter: blur(20px);

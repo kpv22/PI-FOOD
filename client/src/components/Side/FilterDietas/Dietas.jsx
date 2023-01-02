@@ -15,7 +15,6 @@ export const Dietas = (props) => {
 
   return (
     <div className={Style.diets}>
-     
       {dietas?.map((diet) => {
         return (
           <div key={diet.name}>

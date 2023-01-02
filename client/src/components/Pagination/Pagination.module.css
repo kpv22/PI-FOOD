@@ -36,26 +36,6 @@
   font-weight: 700;
 }
 
-/* .wrapper button {
-  height: 30px;
-  font-weight: 700;
-  font-size: 14px;
-  text-align: center;
-  background-color: rgb(255, 255, 255);
-  border: 1px solid #00000076;
-  margin-right: 10px;
-  margin-left: 10px;
-  padding-top: 10px;
-  padding-bottom: 25px;
-  padding-left: 20px;
-  padding-right: 20px;
-  text-transform: uppercase;
-  transition: color 0.6s;
-
-  color: #00000076;
-  cursor: pointer;
-} */
-
 .btn {
   color: #fff;
   background-color: rgba(109, 108, 108, 0.8);

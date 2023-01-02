@@ -4,11 +4,6 @@
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  background: linear-gradient(
-    to bottom,
-    rgb(198, 196, 196) 10%,
-    rgba(96, 96, 96, 0.12) 80%
-  );
 }
 
 .recipeContainer {

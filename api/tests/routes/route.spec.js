@@ -13,14 +13,20 @@ describe("Recipe routes", () => {
   });
 
   describe("/recipes/:id", () => {
-    it("deberia devolver un 200 y id, titulo", async () => {
+    it("deberia devolver un 200 y id, titulo", (done) => {
       try {
-        const res = await agent
+        agent
           .get("/recipes/716426")
           .expect("Content-Type", /json/)
-          .expect(200);
-        expect(res.body).to.have.property("id");
-        expect(res.body).to.have.property("name");
+          .expect(200)
+          .end((err, res) => {
+            if (err) {
+              return done(err);
+            }
+            expect(res.body).to.have.property("id");
+            expect(res.body).to.have.property("name");
+            done();
+          });
       } catch (error) {
         done(error);
       }

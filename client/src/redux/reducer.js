@@ -5,15 +5,13 @@ export const FILTER_DIETS = "FILTER_DIETS";
 export const ORDER_BY_LETTER = "ORDER_BY_LETTER";
 export const CHANGE_PAGE = "CHANGE_PAGE";
 export const HEALTH_SCORE = "HEALTH_SCORE";
-export const POST_RECIPE = "POST_RECIPE";
+
 export const RECIPE_ID = "RECIPE_ID";
 export const CLEARID = "CLEARID";
 export const SET_PAGES = "SET_PAGES";
 export const DELETE_RECIPE = "DELETE_RECIPE";
 export const BURGER = "BURGER";
-// export const UPDATE_RECIPE = "UPDATE_RECIPE";
 
-// export const FILTER_RECIPE = "FILTER_RECIPE";
 export const FILTER_CREATED = "FILTER_CREATED";
 
 const initialState = {
@@ -56,17 +54,6 @@ function rootReducer(state = initialState, action) {
         ...state, // combina el estado actual con el nuevo objeto
         hamburguer: action.payload,
       };
-
-    ////////////////////////////////////////////////////////////////////////////
-    // case FILTER_DIETS:
-    //   const filterByDiets = state.recipes.filter((element) =>
-    //     element.diets.includes(action.payload) ? element : null
-    //   );
-
-    //   return {
-    //     ...state,
-    //     recipes: filterByDiets,
-    //   };
 
     case FILTER_DIETS:
       return {
@@ -112,26 +99,26 @@ function rootReducer(state = initialState, action) {
 
     //  copyRecipes para restaurar el estado original de recipes cuando se seleccione "api" en el filtro, en lugar de usar filtRecipes. Algo así:
 
-    case FILTER_CREATED:
-      const copyRecipes = state.recipeCopy;
-      let filtRecipes = state.recipes;
+    // case FILTER_CREATED:
+    //   const copyRecipes = state.recipeCopy;
+    //   let filtRecipes = state.recipes;
 
-      console.log(filtRecipes);
-      let createdFiltered =
-        action.payload === "api"
-          ? copyRecipes
-          : action.payload === "database"
-          ? filtRecipes.filter((el) => el.id.length > 6)
-          : filtRecipes.filter((el) => el.id.toString().length < 6);
-      if (!createdFiltered.length) {
-        alert("No recipes created yet");
-        createdFiltered = filtRecipes;
-      }
-      return {
-        ...state,
-        recipes: createdFiltered,
-        currentPage: 2,
-      };
+    //   console.log(filtRecipes);
+    //   let createdFiltered =
+    //     action.payload === "api"
+    //       ? copyRecipes
+    //       : action.payload === "database"
+    //       ? filtRecipes.filter((el) => el.id.length > 6)
+    //       : filtRecipes.filter((el) => el.id.toString().length < 6);
+    //   if (!createdFiltered.length) {
+    //     alert("No recipes created yet");
+    //     createdFiltered = filtRecipes;
+    //   }
+    //   return {
+    //     ...state,
+    //     recipes: createdFiltered,
+    //     currentPage: 2,
+    //   };
 
     ///////////////////////////////////////////////////////////////////////
 
@@ -149,12 +136,6 @@ function rootReducer(state = initialState, action) {
       };
     }
     ////////////////////////////////////////////////////////////////////
-
-    case POST_RECIPE:
-      return {
-        ...state,
-        currentPage: 1,
-      };
 
     /////////////////////////////////////////////////////////////////////
     case RECIPE_ID:
@@ -177,21 +158,6 @@ function rootReducer(state = initialState, action) {
       };
 
     //////////////////////////////////////////////////////
-
-    // case UPDATE_RECIPE: //COMPLETAR ACA
-    //   const allMyrecipe = state.recipeCopy;
-    //   const ReceUpdate = allMyrecipe.find((p) => p.id === action.payload.id);
-    //   ReceUpdate.name = action.payload.name;
-    //   ReceUpdate.summary = action.payload.summary;
-    //   ReceUpdate.healthScore = action.payload.healthScore;
-    //   ReceUpdate.image = action.payload.image;
-    //   ReceUpdate.steps = action.payload.steps;
-    //   ReceUpdate.diets = action.payload.diets;
-
-    //   return {
-    //     ...state,
-    //     recipeCopy: allMyrecipe,
-    //   };
 
     /////////////////////////////////////////////////////
 
