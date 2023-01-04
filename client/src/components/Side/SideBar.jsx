@@ -6,12 +6,14 @@ import * as actions from "../../redux/actions";
 import { useState, useEffect } from "react";
 
 export const SideBar = (props) => {
+  // Se define una variable de estado para almacenar las dietas seleccionadas
   const [seleccionadas, setSeleccionadas] = useState([]);
 
   const dispatch = useDispatch();
   const recetas2 = useSelector((state) => state.recipeCopy);
 
-  //filtro de dietas
+  // Esta función maneja el evento de cambio en los checkboxes del menú lateral
+  // y agrega o elimina las dietas seleccionadas en el arreglo seleccionadas
   const handleChange2 = (e) => {
     const name = e.target.value;
     const buscar = seleccionadas.find((ele) => ele === name);
@@ -21,6 +23,9 @@ export const SideBar = (props) => {
       setSeleccionadas([...seleccionadas, e.target.value]);
     }
   };
+  //filtro de dietas
+  // Esta función verifica si una receta cumple con todas las dietas seleccionadas
+  // Retorna true si cumple, false en caso contrario
 
   const filtroDietas = (seleccionadas, dietas) => {
     for (const id of seleccionadas) {
@@ -29,6 +34,7 @@ export const SideBar = (props) => {
     }
     return true;
   };
+  // se utiliza esta función para filtrar el arreglo "recetas2" y se guarda el resultado en la variable "filtro". El arreglo "filtro" contiene las recetas que cumplen con todas las dietas seleccionadas.
   const filtro = recetas2?.filter((ele) =>
     filtroDietas(seleccionadas, ele.diets)
   );

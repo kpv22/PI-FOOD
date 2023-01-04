@@ -7,11 +7,13 @@ import { useState, useEffect } from "react";
 import x from "../../assets/Icon/x.png";
 
 export const SideBarMobile = (props) => {
+  // Se define una variable de estado para almacenar las dietas seleccionadas
   const [seleccionadas, setSeleccionadas] = useState([]);
 
   const dispatch = useDispatch();
   const recetas2 = useSelector((state) => state.recipeCopy);
 
+  // Esta función cambia el valor de la propiedad "burger" del estado global a "false"
   const handleClickClose = () => {
     dispatch(actions.Burger(false));
   };
@@ -28,6 +30,8 @@ export const SideBarMobile = (props) => {
   );
 
   //filtro de dietas
+  // Esta función maneja el evento de cambio en los checkboxes del menú lateral
+  // y agrega o elimina las dietas seleccionadas en el arreglo seleccionadas
   const handleChange2 = (e) => {
     const name = e.target.value;
     const buscar = seleccionadas.find((ele) => ele === name);
@@ -38,6 +42,8 @@ export const SideBarMobile = (props) => {
     }
   };
 
+  // Esta función maneja el evento de cambio en los checkboxes del menú lateral
+  // y agrega o elimina las dietas seleccionadas en el arreglo seleccionadas
   const filtroDietas = (seleccionadas, dietas) => {
     for (const id of seleccionadas) {
       const result = dietas?.find((ele) => ele === id);

@@ -6,8 +6,11 @@ import { useDispatch } from "react-redux";
 import Style from "./Dietas.module.css";
 
 export const Dietas = (props) => {
+  // lista de checkboxes  para que pueda seleccionar las dietas por las que quiere filtrar las recetas
   const dietas = useSelector((state) => state.dietas);
   const dispatch = useDispatch();
+  // Al seleccionar o deseleccionar un checkbox, se ejecuta una función que se le pasa como props
+
   useEffect(() => {
     dispatch(actions.getDiets());
   }, []);

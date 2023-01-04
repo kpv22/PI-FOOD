@@ -36,14 +36,7 @@ export const Recipe = (props) => {
 
   //agarra el indice del primero y del ultimo pj
 
-  //
-  // if (!recipes.length) {
-  //   return (
-  //     <div>
-  //       <Empty />
-  //     </div>
-  //   );
-  // } else {
+
   return (
     <div className={Style.recipeContainer}>
       {totalPages >= 2 && Array.isArray(showRecipes) && (
