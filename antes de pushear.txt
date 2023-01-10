@@ -1,0 +1,11 @@
+antes de pushear
+app:
+// axios.defaults.baseURL = "https://pi-food-production-3adc.up.railway.app/"
+axios.defaults.baseURL = "http://localhost:3001/"
+app servidor:
+// res.header('Access-Control-Allow-Origin', 'https://pi-food-wine.vercel.app/%27); // update to match the domain you will make the request from
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000/%27); // update to match the domain you will make the request from
+"start": "nodemon -L",
+KevinPicado — hoy a las 15:57
+"start2": "nodemon -L",
+"start": "node index.js",

@@ -20,12 +20,12 @@ const validate = (input) => {
         "Debes insertar una imagen con un enlace seguro (https) y formato jpg, jpeg, png o gift",
     },
     steps: {
-      pattern: /^[a-zA-Z0-9 ]{25,500}$/,
+      pattern: /^[a-zA-Z0-9\s]{25,500}$/,
       errorMessage:
         "Tus pasos solo puede contener numeros del 1 al 10, letras minimo 25 hasta 500 caracteres",
     },
     summary: {
-      pattern: /^[a-zA-Z0-9 ]{25,500}$/,
+      pattern: /^[a-zA-Z0-9\s]{25,500}$/,
       errorMessage:
         "Tu descripcion solo puede contener numeros del 1 al 10, letras minimo 25 hasta 500 caracteres",
     },
