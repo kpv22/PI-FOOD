@@ -3,58 +3,58 @@ const { Recipe, Diets } = require("../../db.js");
 require("dotenv").config();
 const { YOUR_API_KEY } = process.env;
 // Traigo de la API toda la info!!!
-// const searchAPI = async () => {
-//   try {
-//     const apiUrl = await axios.get(
-//       `https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5`
-//     );
-//     const apiInfo = await apiUrl.data.results?.map((ele) => {
-//       return {
-//         id: ele.id,
-//         name: ele.title,
-//         summary: ele.summary,
-//         healthScore: ele.healthScore,
-//         image: ele.image,
-//         dishTypes: ele.dishTypes,
-//         diets: ele.diets?.map((element) => element),
-//         steps: ele.analyzedInstructions[0]?.steps
-//           .map((ele) => `${ele.number} ${ele.step}`)
-//           .join(""),
-//       };
-//     });
-//     return apiInfo;
-//   } catch (error) {
-//     console.log("ERROR: ", error);
-//   }
-// };
-
 const searchAPI = async () => {
   try {
-    const BuscarenApi = await axios.get(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY}&addRecipeInformation=true&number=100`,
-      { headers: { "Accept-Encoding": "gzip,deflate,compress" } }
+    const apiUrl = await axios.get(
+      `https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5`
     );
-    if (BuscarenApi.status === 200) {
-      let info = await BuscarenApi.data.results?.map((ele) => {
-        return {
-          id: ele.id,
-          name: ele.title,
-          summary: ele.summary,
-          healthScore: ele.healthScore,
-          image: ele.image,
-          dishTypes: ele.dishTypes?.map((ele) => ele),
-          diets: ele.diets?.map((element) => element),
-          steps: ele.analyzedInstructions[0]?.steps
-            .map((ele) => `${ele.number} ${ele.step}`)
-            .join(" "),
-        };
-      });
-      return info;
-    }
-  } catch (err) {
-    return err;
+    const apiInfo = await apiUrl.data.results?.map((ele) => {
+      return {
+        id: ele.id,
+        name: ele.title,
+        summary: ele.summary,
+        healthScore: ele.healthScore,
+        image: ele.image,
+        dishTypes: ele.dishTypes,
+        diets: ele.diets?.map((element) => element),
+        steps: ele.analyzedInstructions[0]?.steps
+          .map((ele) => `${ele.number} ${ele.step}`)
+          .join(""),
+      };
+    });
+    return apiInfo;
+  } catch (error) {
+    console.log("ERROR: ", error);
   }
 };
+
+// const searchAPI = async () => {
+//   try {
+//     const BuscarenApi = await axios.get(
+//       `https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY}&addRecipeInformation=true&number=100`,
+//       { headers: { "Accept-Encoding": "gzip,deflate,compress" } }
+//     );
+//     if (BuscarenApi.status === 200) {
+//       let info = await BuscarenApi.data.results?.map((ele) => {
+//         return {
+//           id: ele.id,
+//           name: ele.title,
+//           summary: ele.summary,
+//           healthScore: ele.healthScore,
+//           image: ele.image,
+//           dishTypes: ele.dishTypes?.map((ele) => ele),
+//           diets: ele.diets?.map((element) => element),
+//           steps: ele.analyzedInstructions[0]?.steps
+//             .map((ele) => `${ele.number} ${ele.step}`)
+//             .join(" "),
+//         };
+//       });
+//       return info;
+//     }
+//   } catch (err) {
+//     return err;
+//   }
+// };
 
 //DB DATA
 
